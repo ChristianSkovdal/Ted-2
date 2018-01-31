@@ -11,6 +11,7 @@ Ext.define('Ted.view.main.Main', {
     controller: 'main',
     viewModel: 'main',
 
+
     navigationBar: false,
     
     userCls: 'main-container',
