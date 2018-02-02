@@ -14,13 +14,18 @@ Ext.define('Ted.view.authentication.AuthController', {
         AjaxUtil.post('api/user/login',
             login,
             (result) => {
+debugger;
                 let vm = this.getViewModel();
 				vm.set('user', result.data);
-                debugger;
-                if (Ted.redirectHash)
-                    this.redirectTo(Ted.redirectHash);
-                else
+
+                let redir = vm.get('redirectTo');
+                if (redir) {
+                    this.redirectTo(redir);
+                }
+                else {
                     this.redirectTo('workspacelist');
+                }
+                    
 
                 if (vm.get('rememberMe')) {
                     // Persist passwords

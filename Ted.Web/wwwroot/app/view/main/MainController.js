@@ -6,12 +6,16 @@ Ext.define('Ted.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
 
-    routes: {
-        ':node': 'setCurrentView'
+    listen: {
+        controller: {
+            '#': {
+                unmatchedroute: 'setCurrentView'
+            }
+        }
     },
 
-    listeners: {
-        unmatchedroute: 'setCurrentView'
+    routes: {
+        ':node': 'setCurrentView'
     },
 
     onUnmatchedRoute: function (token) {
@@ -19,6 +23,8 @@ Ext.define('Ted.view.main.MainController', {
     },
 
     setCurrentView: function (pageHash) {
+        let vm = this.getViewModel();
+
         let isValidId = n => {
             return !isNaN(parseFloat(n)) && isFinite(n);
         }
@@ -31,13 +37,13 @@ Ext.define('Ted.view.main.MainController', {
                 AjaxUtil.post('api/user/login',
                     login,
                     (result) => {
-                        vm.set('user', result.data);
 
+                        vm.set('user', result.data);
                         if (isValidId(pageHash)) {
                             this.setCurrentView(pageHash);
                         }
                         else {
-                            showWorkspaceList();
+                            this.showWorkspaceList();
                         }
 
                     },
@@ -52,7 +58,6 @@ Ext.define('Ted.view.main.MainController', {
 
         }
 
-
         if (isValidId(pageHash)) {
             this.loadPageMetaData(pageHash, page => {
 
@@ -60,7 +65,7 @@ Ext.define('Ted.view.main.MainController', {
 
                     this.loadWorkspaceFromPage(page.id, true, ws => {
                         this.getViewModel().set('workspace', ws);
-                        this.loadPageContents(page, false);
+                        this.loadPageContents(page);
 
                     }, doLogin);
 
@@ -69,14 +74,14 @@ Ext.define('Ted.view.main.MainController', {
 
                     if (this.getViewModel().get('user')) {
 
-                        if (this.getViewModel().get('workspace', ws)) {
-                            this.loadPageContents(page, true);
-
+                        if (this.getViewModel().get('workspace')) {
+                            this.loadPageContents(page);
                         }
                         else {
+
                             this.loadWorkspaceFromPage(page.id, false, ws => {
                                 this.getViewModel().set('workspace', ws);
-                                this.loadPageContents(page, true);
+                                this.loadPageContents(page);
 
                             }, doLogin);
                         }
@@ -91,13 +96,6 @@ Ext.define('Ted.view.main.MainController', {
         }
         else {
             this.showSystemPage(pageHash);
-            //if (this.getViewModel().get('user')) {
-            //    this.showWorkspaceList();
-            //}
-            //else {
-            //    this.showSystemPage(pageHash);
-            //    //doLogin();
-            //}
         }
 
     },
@@ -107,32 +105,50 @@ Ext.define('Ted.view.main.MainController', {
     },
 
     showLogin(pageHash) {
-        debugger;
         let isValidId = n => {
             return !isNaN(parseFloat(n)) && isFinite(n);
         }
 
         if (isValidId(pageHash)) {
-            Ted.redirectHash = pageHash;
+            this.redirectTo('login' + '>redirectTo=' + pageHash);
+        }
+        else {
+            this.redirectTo('login');
         }
 
-        this.redirectTo('login');
+
     },
 
     showSystemPage(xtype, showTools) {
 
         // Hide tools
-        if (showTools) {
+        this.getViewModel().set('showAuthoringTools', showTools);
 
-        }
+        let tokens = xtype.split('>');
+        xtype = tokens[0];
+        try {
 
-        let view = this.getView();
-        let item = view.child('component[xtype=' + xtype + ']');
+            let view = this.getView();
+            let item = view.child('component[xtype=' + xtype + ']');
 
-        if (!item) {
-            view.setActiveItem({
-                xtype: xtype,
-            });
+            if (!item) {
+                item = {
+                    xtype: xtype
+                }
+                item = view.setActiveItem(item);
+            }
+
+            if (tokens.length > 1) {
+                for (var i = 0; i < length; i++) {
+                    let propSet = tokens[i + 1].split('=');
+                    item.getViewModel().set(propSet[0], propSet.length == 1 ? null : propSet[1]);
+                }
+            }
+
+        } catch (e) {
+            Ext.Msg.alert('Error Loading Page ' + xtype, e.message);
+            this.redirectTo('login');
+            return;
         }
 
     },
@@ -155,12 +171,19 @@ Ext.define('Ted.view.main.MainController', {
 
         if (!item) {
             item = {
-                xtype: viewType,//node.get('viewType'),
+                xtype: viewType,
                 pageHash: pageHash
             };
         }
 
-        view.setActiveItem(item);
+        try {
+            view.setActiveItem(item);
+        } catch (e) {
+            Ext.Msg.alert('Error Loading Page ' + viewType, e.message);
+            this.redirectTo('login');
+            return;
+        }
+
 
         let navigationTree = this.lookup('navigationTree');
         let store = navigationTree.getStore();
@@ -169,7 +192,7 @@ Ext.define('Ted.view.main.MainController', {
         navigationTree.setSelection(node);
     },
 
-    loadPageContents(page, showTools) {
+    loadPageContents(page) {
 
         let SIMULATED_PAGE_FROM_SERVER = {
             viewType: 'MyPage',
@@ -177,7 +200,7 @@ Ext.define('Ted.view.main.MainController', {
             isPublic: false,
             code: [
                 'alert("I was Hit!");',
-                'this.up("panel").setTitle("Me Too!");',
+                'cmp.up("panel").setTitle("Me Too!");',
             ],
             json: 'some json here'
         };
@@ -198,7 +221,7 @@ Ext.define('Ted.view.main.MainController', {
 
         for (var i = 0; i < SIMULATED_PAGE_FROM_SERVER.code.length; i++) {
             let script = SIMULATED_PAGE_FROM_SERVER.code[i];
-            this['MyPage_fn__' + i] = new Function(script);
+            this['MyPage_fn__' + i] = new Function('cmp', script);
         }
 
         let stdProps = {
@@ -211,6 +234,7 @@ Ext.define('Ted.view.main.MainController', {
         Ext.define('MyPage', json);
 
         // showTools = show toolbar and navigationtree
+        this.getViewModel().set('showAuthoringTools', !SIMULATED_PAGE_FROM_SERVER.isPublic);
 
         page.json = json;
 
@@ -224,9 +248,10 @@ Ext.define('Ted.view.main.MainController', {
 
         let SIMULATED_WORKSPACE_FROM_SERVER = {
             navigationStoreChildren: [],
-            startUpCode: 'alert("Loading!!!");',
+            startUpCode: '',//'alert("Loading!!!");',
             shutDownCode: '',
-            navigation: ''
+            navigation: '',
+            startPageId: 123
         };
 
         new Function('controller', SIMULATED_WORKSPACE_FROM_SERVER.startUpCode)(this);
@@ -247,10 +272,11 @@ Ext.define('Ted.view.main.MainController', {
                 iconCls: 'x-fa fa-send',
                 //rowCls: 'nav-tree-badge nav-tree-badge-hot',
                 viewType: 'email',
-                leaf: true
+                leaf: true,
+                pageHash: '123'
             }
         ];
-        debugger;
+
         let navigationTree = this.lookup('navigationTree');
         let store = Ext.create('Ext.data.TreeStore', {
             storeId: 'NavigationTree',
@@ -265,7 +291,7 @@ Ext.define('Ted.view.main.MainController', {
             }
         });
         navigationTree.setStore(store);
-        
+
         callback(SIMULATED_WORKSPACE_FROM_SERVER);
     }
 

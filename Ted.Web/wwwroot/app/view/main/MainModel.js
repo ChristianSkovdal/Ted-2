@@ -7,8 +7,9 @@ Ext.define('Ted.view.main.MainModel', {
 
     data: {
         workspace: null,
-        user: null
+        user: null,
 
+        showAuthoringTools: false
     }
 
 });

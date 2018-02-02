@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
@@ -34,6 +35,7 @@ namespace Ted
                 c.SwaggerDoc("v1", new Info { Title = "Ted API", Version = "v1" });
             });
 
+            services.AddDbContext<TedContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
         }
 

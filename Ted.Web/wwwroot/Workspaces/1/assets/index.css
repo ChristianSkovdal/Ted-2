@@ -8,3 +8,26 @@
     background-color: red !important;
     background-size: cover;
 }
+
+
+.main-logo {
+    background-color: $base-color;
+    height: $main-toolbar-height;
+    line-height: $main-toolbar-height;
+    font-size: 16px;
+    color: #fff;
+    padding-left: $main-nav-collapsed-width;
+    // for symmetry position: relative;
+    &:before
+
+{
+    content: " ";
+    position: absolute;
+    background-size: cover;
+    top: ($main-toolbar-height - $logo-image-height) / 2;
+    left: 22px;
+    width: $logo-image-width;
+    height: $logo-image-height;
+    background: transparent url(/images/module.png) no-repeat center center !important;
+}
+}
