@@ -6,9 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
 
     <title>TED</title>
+    <!--<link rel="stylesheet" type="text/css" href="Workspaces/1/assets/index.css">-->
 
-    <script id="microloader" data-app="c306a676-068e-4fce-bca1-8efd36fa6c09" type="text/javascript" src="bootstrap.js"></script>
+
+    <script>
+        var cssId = 'myCss';  // you could encode the css path itself to generate id..
+
+
+        let some = new URLSearchParams(window.location.search);
+        let wsid = some.get('workspace');
+        if (wsid) {
+
+            if (!document.getElementById(cssId)) {
+                var head = document.getElementsByTagName('head')[0];
+                var link = document.createElement('link');
+                link.id = cssId;
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'Workspaces/' + wsid + '/assets/index.css';
+                link.media = 'all';
+                head.appendChild(link);
+            }
+        }
+
+    </script>
+
+    <script id="microloader" data-app="c306a676-068e-4fce-bca1-8efd36fa6c09" type="text/javascript" src="../../bootstrap.js"></script>
+
 
 </head>
-<body></body>
+<body>
+
+</body>
 </html>

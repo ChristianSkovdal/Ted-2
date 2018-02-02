@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
@@ -15,10 +16,18 @@ namespace Ted
 
         public IConfiguration Configuration { get; }
 
+
+        public class HtmlOutputFormatter : StringOutputFormatter
+        {
+            public HtmlOutputFormatter() => SupportedMediaTypes.Add("text/html");
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddMvc(options => options.OutputFormatters.Add(new HtmlOutputFormatter()));
 
             services.AddSwaggerGen(c =>
             {

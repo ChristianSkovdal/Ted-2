@@ -1177,60 +1177,54 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:495 */
 .x-treelist-nav {
-    background-color: #fafafa;
-    background-color: var(--background-color);
-    background-position: 24px 0%;
+    background-color: #32404e;
+    background-position: 44px 0%;
     padding: 0 0 0 0;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:103 */
 .x-treelist-nav .x-treelist-toolstrip {
-    background-color: #fafafa;
-    background-color: var(--background-color);
+    background-color: #32404e;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:112 */
 .x-treelist-nav .x-treelist-item-selected.x-treelist-item-tool {
-    color: #111;
-    color: var(--color);
-    background-color: #d4d4d4;
+    background-color: #475360;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:117 */
 .x-treelist-nav .x-treelist-item-selected.x-treelist-item-tool:after {
-    height: 44px;
+    height: 64px;
     position: absolute;
     top: 0;
     left: 0;
     content: " ";
-    width: 4px;
-    background-color: #ff9800;
-    background-color: var(--accent-color);
+    width: 5px;
+    background-color: #4487c1;
+    background-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:134 */
 .x-treelist-nav .x-treelist-item-selected > .x-treelist-row {
-    background-color: #e1e1e1;
+    background-color: #475360;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:143 */
 .x-treelist-nav .x-treelist-item-tool {
-    padding-left: 16px;
-    padding-left: var(--content-padding);
-    padding-right: 16px;
-    padding-right: var(--content-padding);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:150 */
 .x-treelist-nav .x-treelist-item-tool-floated:after {
-    height: 44px;
+    height: 64px;
     position: absolute;
     top: 0;
     left: 0;
     content: " ";
-    width: 4px;
-    background-color: #ffe0b2;
-    background-color: var(--accent-light-color);
+    width: 5px;
+    background-color: #4487c1;
+    background-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:166 */
 .x-treelist-nav .x-treelist-item-icon:before,
 .x-treelist-nav .x-treelist-item-tool:before,
 .x-treelist-nav .x-treelist-item-expander {
-    line-height: 44px;
+    line-height: 64px;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:178 */
 .x-treelist-nav .x-treelist-item-icon,
@@ -1248,49 +1242,32 @@
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:193 */
 .x-treelist-nav .x-treelist-item-icon,
 .x-treelist-nav .x-treelist-item-tool {
-    color: #515151;
+    color: #adb3b8;
     font-size: 18px;
-    width: 24px;
+    width: 44px;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:206 */
 .x-treelist-nav .x-treelist-item-tool {
-    width: 56px;
+    width: 64px;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:216 */
 .x-treelist-nav .x-treelist-item-expander {
-    color: #5e5e5e;
-    font-size: 22px;
+    color: #fff;
+    font-size: 16px;
     width: 24px;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:232 */
-.x-treelist-nav .x-treelist-item-expander:after {
-    content: 'keyboard_arrow_down';
-    font-feature-settings: 'liga';
-    font-family: 'Material Icons';
-    line-height: 44px;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:240 */
-.x-treelist-nav .x-treelist-item-expanded > * > * > .x-treelist-item-expander:after {
-    content: 'keyboard_arrow_up';
-    font-feature-settings: 'liga';
-    font-family: 'Material Icons';
-    line-height: 44px;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:253 */
 .x-treelist-nav .x-treelist-item-text {
-    color: #111;
-    color: var(--color);
-    margin-left: 40px;
+    color: #adb3b8;
+    margin-left: 60px;
     margin-right: 24px;
-    font-size: 16px;
-    line-height: 44px;
+    font-size: 14px;
+    line-height: 64px;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:270 */
 .x-treelist-nav .x-treelist-row {
-    padding-left: 16px;
-    padding-left: var(--content-padding);
-    padding-right: 16px;
-    padding-right: var(--content-padding);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:276 */
 .x-treelist-nav .x-treelist-row-over:before,
@@ -1300,23 +1277,21 @@
     display: block;
     left: 0;
     top: 0;
-    width: 6px;
+    width: 5px;
     height: 100%;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:287 */
 .x-treelist-nav .x-treelist-row-over:before {
-    background-color: #ffe0b2;
-    background-color: var(--accent-light-color);
+    background-color: transparent;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:291 */
 .x-treelist-nav .x-treelist-item-selected > .x-treelist-row-over:before {
-    background-color: #ff9800;
-    background-color: var(--accent-color);
+    background-color: #5f98ca;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:295 */
 .x-treelist-nav .x-treelist-item-selected > .x-treelist-row:before {
-    background-color: #ff9800;
-    background-color: var(--accent-color);
+    background-color: #4487c1;
+    background-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:301 */
 .x-treelist-nav .x-treelist-item-floated .x-treelist-container {
@@ -1324,16 +1299,15 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:304 */
 .x-treelist-nav .x-treelist-item-floated > .x-treelist-row {
-    background-color: #fafafa;
-    background-color: var(--background-color);
+    background-color: #32404e;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:308 */
 .x-treelist-nav .x-treelist-item-floated > .x-treelist-container {
-    margin-left: -16px;
+    margin-left: -10px;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:311 */
 .x-big .x-treelist-nav .x-treelist-item-floated > .x-treelist-container {
-    margin-left: -16px;
+    margin-left: -10px;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:317 */
 .x-treelist-nav .x-treelist-item-floated > * > * > .x-treelist-item-text {
@@ -1350,70 +1324,43 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:330 */
 .x-treelist-nav .x-treelist-item-floated > .x-treelist-row-over {
-    background-color: #fafafa;
-    background-color: var(--background-color);
+    background-color: #32404e;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:333 */
 .x-treelist-nav .x-treelist-item-floated > .x-treelist-row-over > * > .x-treelist-item-text {
-    color: #111;
-    color: var(--color);
+    color: #adb3b8;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:339 */
 .x-treelist-nav .x-treelist-item-expanded {
-    background-color: #eee;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:346 */
-.x-treelist-nav .x-treelist-item-expanded > .x-treelist-item-expander:after {
-    content: 'keyboard_arrow_up';
-    font-feature-settings: 'liga';
-    font-family: 'Material Icons';
-    line-height: 1;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:351 */
-.x-treelist-nav .x-treelist-item-collapsed > * > .x-treelist-item-expander:after {
-    content: 'keyboard_arrow_down';
-    font-feature-settings: 'liga';
-    font-family: 'Material Icons';
-    line-height: 1;
+    background-color: #2c3845;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:357 */
 .x-treelist-nav .x-treelist-highlight-path .x-treelist-item-over > * > * > .x-treelist-item-icon {
-    color: #515151;
-    transition: none;
+    color: #fff;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:361 */
 .x-treelist-nav .x-treelist-highlight-path .x-treelist-item-over > * > * > .x-treelist-item-text {
-    color: #111;
-    color: var(--color);
-    transition: none;
+    color: #d6d9dc;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:365 */
 .x-treelist-nav .x-treelist-highlight-path .x-treelist-item-over > * > * > .x-treelist-item-expander {
-    color: #111;
-    color: var(--color);
-    transition: none;
+    color: #fff;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:372 */
 .x-treelist-nav .x-treelist-row-over {
-    background-color: #e1e1e1;
-    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    background-color: #3c4a57;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:376 */
 .x-treelist-nav .x-treelist-row-over > * > .x-treelist-item-icon {
-    color: #515151;
-    transition: none;
+    color: #fff;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:380 */
 .x-treelist-nav .x-treelist-row-over > * > .x-treelist-item-text {
-    color: #111;
-    color: var(--color);
-    transition: none;
+    color: #d6d9dc;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:384 */
 .x-treelist-nav .x-treelist-row-over > * > .x-treelist-item-expander {
-    color: #111;
-    color: var(--color);
-    transition: none;
+    color: #fff;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:391 */
 .x-treelist-nav .x-treelist-expander-first .x-treelist-item-icon {
@@ -1421,7 +1368,7 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:400 */
 .x-treelist-nav .x-treelist-expander-first .x-treelist-item-text {
-    margin-left: 64px;
+    margin-left: 84px;
     margin-right: 0;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/packages/core/sass/src/list/TreeItem.scss:410 */
@@ -4660,7 +4607,7 @@ div.x-trigger.x-grouped {
     z-index: 1;
     height: 7px;
     width: 7px;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/src/grid/selection/Model.scss:26 */
@@ -4673,7 +4620,7 @@ div.x-trigger.x-grouped {
     position: absolute;
     pointer-events: none;
     z-index: 1;
-    border: 1px dotted #9c60b7;
+    border: 1px dotted #4487c1;
     border: 1px dotted var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/src/grid/plugin/ColumnResizing.scss:1 */
@@ -8450,7 +8397,7 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Progress.scss:230 */
 .x-progress .x-progress-bar {
     min-height: 4px;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -8524,7 +8471,7 @@ div.x-trigger.x-grouped {
 .x-indicator-light span.x-indicator-active {
     width: 16px;
     height: 16px;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -8554,7 +8501,7 @@ div.x-trigger.x-grouped {
 .x-indicator-dark span.x-indicator-active {
     width: 16px;
     height: 16px;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -8668,7 +8615,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Tool.scss:545 */
 .x-keyboard-mode .x-tool.x-focused {
-    outline: 1px solid #9c60b7;
+    outline: 1px solid #4487c1;
     outline: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Tool.scss:550 */
@@ -8949,7 +8896,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
 .x-button {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
     font: 600 14px/16px Roboto, sans-serif;
     border-radius: 2px;
@@ -8983,7 +8930,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
 .x-button .x-icon-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
     width: 16px;
     height: 16px;
@@ -9031,7 +8978,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
 .x-button .x-arrow-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
     width: 16px;
     height: 16px;
@@ -9109,8 +9056,8 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
 .x-button.x-pressing .x-inner-el,
 .x-button.x-pressed .x-inner-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
@@ -9133,8 +9080,8 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1444 */
 .x-keyboard-mode .x-button.x-focused .x-inner-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
@@ -9216,8 +9163,8 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
 .x-button-action .x-inner-el {
-    border-color: #884aa4;
-    background-color: #9c60b7;
+    border-color: #3772a5;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -9233,8 +9180,8 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
 .x-button-action.x-hovered .x-inner-el {
-    border-color: #77418f;
-    background-color: #8e4dab;
+    border-color: #2f628e;
+    background-color: #3977ad;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
@@ -9245,8 +9192,8 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
 .x-button-action.x-pressing .x-inner-el,
 .x-button-action.x-pressed .x-inner-el {
-    border-color: #65377a;
-    background-color: #7c4496;
+    border-color: #285277;
+    background-color: #326896;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
@@ -9550,8 +9497,8 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
 .x-button-segmented .x-inner-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
@@ -9567,8 +9514,8 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
 .x-button-segmented.x-hovered .x-inner-el {
-    border-color: #9e64b9;
-    background-color: #b080c5;
+    border-color: #4889c2;
+    background-color: #669dcc;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
@@ -9580,8 +9527,8 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
 .x-button-segmented.x-pressing .x-inner-el,
 .x-button-segmented.x-pressed .x-inner-el {
-    border-color: #884aa4;
-    background-color: #9c60b7;
+    border-color: #3772a5;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -9882,7 +9829,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/panel/Header.scss:68 */
 .x-panelheader {
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
     border: 1px solid #e1e1e1;
@@ -10160,7 +10107,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Tool.scss:545 */
 .x-keyboard-mode .x-paneltool-light.x-focused {
-    outline-color: #9c60b7;
+    outline-color: #4487c1;
     outline-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/src/Mask.scss:1 */
@@ -10378,7 +10325,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Tool.scss:545 */
 .x-keyboard-mode .x-dialogtool.x-focused {
-    outline-color: #9c60b7;
+    outline-color: #4487c1;
     outline-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Dialog.scss:885 */
@@ -10414,7 +10361,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/field/Field.scss:637 */
 .x-field.x-focused > .x-label-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/field/Field.scss:657 */
@@ -10561,7 +10508,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/field/trigger/Trigger.scss:264 */
 .x-trigger.x-interactive:active .x-icon-el {
-    color: #bd95cf;
+    color: #7dacd4;
     color: var(--base-pressed-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/src/field/trigger/Trigger.scss:21 */
@@ -10699,7 +10646,7 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/field/Text.scss:579 */
 .x-textfield.x-focused .x-underline-el:before {
     height: 2px;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/field/Text.scss:584 */
@@ -11126,7 +11073,7 @@ div.x-trigger.x-grouped {
     bottom: 0px;
     left: 0px;
     pointer-events: none;
-    border: 1px solid #9c60b7;
+    border: 1px solid #4487c1;
     border: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Panel.scss:878 */
@@ -11402,7 +11349,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1065 */
 .x-splitButton {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
     font: 600 14px/16px Roboto, sans-serif;
     border-radius: 2px;
@@ -11452,7 +11399,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1117 */
 .x-splitButton.x-arrow-align-right .x-splitArrow-el {
-    border-left: 1px solid #9c60b7;
+    border-left: 1px solid #4487c1;
     border-left: 1px solid var(--base-color);
     border-bottom-right-radius: 2px;
     border-top-right-radius: 2px;
@@ -11464,14 +11411,14 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1129 */
 .x-splitButton.x-arrow-align-right .x-splitArrow-el.x-hovered {
-    border-left: 1px solid #9c60b7;
+    border-left: 1px solid #4487c1;
     border-left: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1134 */
 .x-splitButton.x-arrow-align-right .x-splitArrow-el.x-focused {
     color: #fafafa;
     color: var(--background-color);
-    border-left: 1px solid #9c60b7;
+    border-left: 1px solid #4487c1;
     border-left: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1139 */
@@ -11479,7 +11426,7 @@ div.x-trigger.x-grouped {
 .x-splitButton.x-arrow-align-right .x-splitArrow-el.x-pressed {
     color: #fafafa;
     color: var(--background-color);
-    border-left: 1px solid #9c60b7;
+    border-left: 1px solid #4487c1;
     border-left: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1145 */
@@ -11501,7 +11448,7 @@ div.x-trigger.x-grouped {
     padding-top: 5px;
     padding-bottom: 5px;
     width: 100%;
-    border-top: 1px solid #9c60b7;
+    border-top: 1px solid #4487c1;
     border-top: 1px solid var(--base-color);
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
@@ -11513,14 +11460,14 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1176 */
 .x-splitButton.x-arrow-align-bottom .x-splitArrow-el.x-hovered {
-    border-top: 1px solid #9c60b7;
+    border-top: 1px solid #4487c1;
     border-top: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1181 */
 .x-splitButton.x-arrow-align-bottom .x-splitArrow-el.x-focused {
     color: #fafafa;
     color: var(--background-color);
-    border-top: 1px solid #9c60b7;
+    border-top: 1px solid #4487c1;
     border-top: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1186 */
@@ -11528,7 +11475,7 @@ div.x-trigger.x-grouped {
 .x-splitButton.x-arrow-align-bottom .x-splitArrow-el.x-pressed {
     color: #fafafa;
     color: var(--background-color);
-    border-top: 1px solid #9c60b7;
+    border-top: 1px solid #4487c1;
     border-top: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1192 */
@@ -11537,7 +11484,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1196 */
 .x-splitButton .x-icon-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
     width: 16px;
     height: 16px;
@@ -11585,7 +11532,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1246 */
 .x-splitButton .x-arrow-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
     width: 16px;
     height: 16px;
@@ -11651,8 +11598,8 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1331 */
 .x-splitButton .x-pressing.x-splitBody-el,
 .x-splitButton .x-pressed.x-splitBody-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
@@ -11671,16 +11618,16 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1344 */
 .x-splitButton .x-pressing.x-splitInner-el,
 .x-splitButton .x-pressed.x-splitInner-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1349 */
 .x-splitButton .x-pressing.x-splitArrow-el,
 .x-splitButton .x-pressed.x-splitArrow-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
@@ -11691,8 +11638,8 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1360 */
 .x-keyboard-mode .x-splitButton .x-focused.x-splitBody-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
@@ -11708,15 +11655,15 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1373 */
 .x-keyboard-mode .x-splitButton .x-focused.x-splitInner-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1378 */
 .x-keyboard-mode .x-splitButton .x-focused.x-splitArrow-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
@@ -11888,15 +11835,15 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1079 */
 .x-splitButton-action .x-splitBody-el {
-    border-color: #884aa4;
-    background-color: #9c60b7;
+    border-color: #3772a5;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1091 */
 .x-splitButton-action .x-splitInner-el {
     padding: 14px;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
     position: relative;
@@ -11906,7 +11853,7 @@ div.x-trigger.x-grouped {
     padding: 14px;
     padding-left: 3px;
     padding-right: 3px;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
     position: relative;
@@ -11981,20 +11928,20 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1294 */
 .x-splitButton-action .x-hovered.x-splitBody-el {
-    border-color: #77418f;
-    background-color: #8e4dab;
+    border-color: #2f628e;
+    background-color: #3977ad;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1307 */
 .x-splitButton-action .x-hovered.x-splitInner-el {
-    border-color: #77418f;
-    background-color: #8e4dab;
+    border-color: #2f628e;
+    background-color: #3977ad;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1312 */
 .x-splitButton-action .x-hovered.x-splitArrow-el {
-    border-color: #77418f;
-    background-color: #8e4dab;
+    border-color: #2f628e;
+    background-color: #3977ad;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1328 */
@@ -12005,8 +11952,8 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1331 */
 .x-splitButton-action .x-pressing.x-splitBody-el,
 .x-splitButton-action .x-pressed.x-splitBody-el {
-    border-color: #65377a;
-    background-color: #7c4496;
+    border-color: #285277;
+    background-color: #326896;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1336 */
@@ -12022,15 +11969,15 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1344 */
 .x-splitButton-action .x-pressing.x-splitInner-el,
 .x-splitButton-action .x-pressed.x-splitInner-el {
-    border-color: #65377a;
-    background-color: #7c4496;
+    border-color: #285277;
+    background-color: #326896;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1349 */
 .x-splitButton-action .x-pressing.x-splitArrow-el,
 .x-splitButton-action .x-pressed.x-splitArrow-el {
-    border-color: #65377a;
-    background-color: #7c4496;
+    border-color: #285277;
+    background-color: #326896;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1065 */
@@ -12871,15 +12818,15 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1079 */
 .x-splitButton-segmented .x-splitBody-el {
-    border-color: #ab79c2;
-    background-color: #bd95cf;
+    border-color: #5f98ca;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1091 */
 .x-splitButton-segmented .x-splitInner-el {
     padding: 14px;
-    background-color: #bd95cf;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
     position: relative;
@@ -12889,7 +12836,7 @@ div.x-trigger.x-grouped {
     padding: 14px;
     padding-left: 3px;
     padding-right: 3px;
-    background-color: #bd95cf;
+    background-color: #7dacd4;
     background-color: var(--base-pressed-color);
     background-image: none;
     position: relative;
@@ -12966,20 +12913,20 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1294 */
 .x-splitButton-segmented .x-hovered.x-splitBody-el {
-    border-color: #9e64b9;
-    background-color: #b080c5;
+    border-color: #4889c2;
+    background-color: #669dcc;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1307 */
 .x-splitButton-segmented .x-hovered.x-splitInner-el {
-    border-color: #9e64b9;
-    background-color: #b080c5;
+    border-color: #4889c2;
+    background-color: #669dcc;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1312 */
 .x-splitButton-segmented .x-hovered.x-splitArrow-el {
-    border-color: #9e64b9;
-    background-color: #b080c5;
+    border-color: #4889c2;
+    background-color: #669dcc;
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1328 */
@@ -12991,8 +12938,8 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1331 */
 .x-splitButton-segmented .x-pressing.x-splitBody-el,
 .x-splitButton-segmented .x-pressed.x-splitBody-el {
-    border-color: #884aa4;
-    background-color: #9c60b7;
+    border-color: #3772a5;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -13011,25 +12958,25 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1344 */
 .x-splitButton-segmented .x-pressing.x-splitInner-el,
 .x-splitButton-segmented .x-pressed.x-splitInner-el {
-    border-color: #884aa4;
-    background-color: #9c60b7;
+    border-color: #3772a5;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/SplitButton.scss:1349 */
 .x-splitButton-segmented .x-pressing.x-splitArrow-el,
 .x-splitButton-segmented .x-pressed.x-splitArrow-el {
-    border-color: #884aa4;
-    background-color: #9c60b7;
+    border-color: #3772a5;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Toolbar.scss:330 */
 .x-titlebar {
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
-    border-color: #0e0711;
+    border-color: #010305;
     font: 600 18px/16px Roboto, sans-serif;
     color: #fff;
     color: var(--base-foreground-color);
@@ -13162,7 +13109,7 @@ div.x-trigger.x-grouped {
     bottom: 0px;
     left: 0px;
     pointer-events: none;
-    border: 1px solid #9c60b7;
+    border: 1px solid #4487c1;
     border: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/Abstract.scss:385 */
@@ -13217,7 +13164,7 @@ div.x-trigger.x-grouped {
     bottom: 0px;
     left: 0px;
     pointer-events: none;
-    border: 1px solid #9c60b7;
+    border: 1px solid #4487c1;
     border: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/ItemHeader.scss:262 */
@@ -13242,7 +13189,7 @@ div.x-trigger.x-grouped {
     bottom: 0px;
     left: 0px;
     pointer-events: none;
-    border: 1px solid #9c60b7;
+    border: 1px solid #4487c1;
     border: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:30 */
@@ -13328,7 +13275,7 @@ div.x-trigger.x-grouped {
     bottom: 0px;
     left: 0px;
     pointer-events: none;
-    border: 1px solid #9c60b7;
+    border: 1px solid #4487c1;
     border: 1px solid var(--base-color);
     margin: -1px 0;
 }
@@ -13417,7 +13364,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/IndexBar.scss:565 */
 .x-edge .x-indexbar .x-indexbar-indicator {
-    background-color: #9c60b7;
+    background-color: #4487c1;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/IndexBar.scss:570 */
 .x-indexbar .x-indexbar-indicator {
@@ -13428,7 +13375,7 @@ div.x-trigger.x-grouped {
     font-size: 14px;
     line-height: 25px;
     font-weight: 400;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     border-radius: 100%;
 }
@@ -13441,7 +13388,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/IndexBar.scss:594 */
 .x-edge .x-indexbar .x-indexbar-indicator::before {
-    background-color: #9c60b7;
+    background-color: #4487c1;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/IndexBar.scss:599 */
 .x-indexbar .x-indexbar-indicator::before {
@@ -13451,7 +13398,7 @@ div.x-trigger.x-grouped {
     transform: rotate(45deg);
     top: 19.5px;
     position: absolute;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/IndexBar.scss:609 */
@@ -13525,7 +13472,7 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/listswiper/Stepper.scss:349 */
 .x-listswiperstepper.x-active {
     color: #fff;
-    background-color: #9a08dc;
+    background-color: #0071d2;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/listswiper/Stepper.scss:353 */
 .x-listswiperstepper.x-active .x-listswiperstepper-icon-wrap-el .x-icon-el {
@@ -13886,7 +13833,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Tool.scss:545 */
 .x-keyboard-mode .x-tooltiptool.x-focused {
-    outline-color: #9c60b7;
+    outline-color: #4487c1;
     outline-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/plugin/ListPaging.scss:175 */
@@ -13904,7 +13851,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/plugin/ListPaging.scss:192 */
 .x-listpaging .x-message {
-    color: #9a08dc;
+    color: #0071d2;
     text-align: center;
     font-size: 13px;
 }
@@ -13966,7 +13913,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/pullrefresh/Bar.scss:126 */
 .x-pullrefreshbar .x-pullrefreshbar-arrow {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
     font-size: 250%;
     font-family: 'Material Icons';
@@ -14010,28 +13957,28 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/pullrefresh/Spinner.scss:35 */
 .x-pullrefreshspinner .x-pullrefreshspinner-arrow-main {
-    border-color: #9c60b7 #9c60b7 transparent;
+    border-color: #4487c1 #4487c1 transparent;
     border-color: var(--base-color) var(--base-color) transparent;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/pullrefresh/Spinner.scss:37 */
 .x-pullrefreshspinner .x-pullrefreshspinner-arrow-main:before {
-    border-color: #9c60b7 transparent transparent transparent;
+    border-color: #4487c1 transparent transparent transparent;
     border-color: var(--base-color) transparent transparent transparent;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/pullrefresh/Spinner.scss:46 */
 .x-pullrefreshspinner .x-pullrefreshspinner-spinner-main .x-pullrefreshspinner-spinner-left .x-pullrefreshspinner-half-circle,
 .x-pullrefreshspinner .x-pullrefreshspinner-spinner-main .x-pullrefreshspinner-spinner-right .x-pullrefreshspinner-half-circle {
-    border-top-color: #9c60b7;
+    border-top-color: #4487c1;
     border-top-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/pullrefresh/Spinner.scss:52 */
 .x-pullrefreshspinner .x-pullrefreshspinner-spinner-main .x-pullrefreshspinner-spinner-left .x-pullrefreshspinner-half-circle {
-    border-left-color: #9c60b7;
+    border-left-color: #4487c1;
     border-left-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/pullrefresh/Spinner.scss:58 */
 .x-pullrefreshspinner .x-pullrefreshspinner-spinner-main .x-pullrefreshspinner-spinner-right .x-pullrefreshspinner-half-circle {
-    border-right-color: #9c60b7;
+    border-right-color: #4487c1;
     border-right-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/field/Checkbox.scss:237 */
@@ -14057,7 +14004,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/field/Checkbox.scss:256 */
 .x-checkboxfield.x-checked .x-icon-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
@@ -14066,7 +14013,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/field/Checkbox.scss:262 */
 .x-keyboard-mode .x-checkboxfield.x-focused .x-icon-el {
-    color: #ab78c2;
+    color: #6099ca;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/field/Checkbox.scss:267 */
 .x-checkboxfield.x-disabled .x-icon-el {
@@ -14198,7 +14145,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/src/field/Select.scss:14 */
 .x-selectfield-overlay .x-listitem.x-selected .x-list-label:after {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
     position: absolute;
     right: 8px;
@@ -14218,7 +14165,7 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/SimpleListItem.scss:519 */
 .x-show-selection > .x-listitem-yearpicker.x-selected {
     background-color: transparent;
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/dataview/SimpleListItem.scss:417 */
@@ -14315,7 +14262,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/panel/Date.scss:2001 */
 .x-datepanel .x-dateview tbody .x-cell.x-today .x-inner {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
     font-weight: 700;
 }
@@ -14331,7 +14278,7 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/panel/Date.scss:2025 */
 .x-datepanel .x-dateview tbody .x-cell.x-selected .x-inner {
     color: #fff;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     font-weight: normal;
 }
@@ -14344,7 +14291,7 @@ div.x-trigger.x-grouped {
     bottom: 5px;
     left: 5px;
     pointer-events: none;
-    border: 1px solid #391f45;
+    border: 1px solid #152b3e;
     border-radius: 100%;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/outline.scss:62 */
@@ -14356,7 +14303,7 @@ div.x-trigger.x-grouped {
     bottom: 1px;
     left: 1px;
     pointer-events: none;
-    border: 1px solid #391f45;
+    border: 1px solid #152b3e;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/outline.scss:62 */
 .x-datepanel .x-dateview tbody .x-cell.x-selected:not(.x-hide-focus):focus .x-inner:after {
@@ -14438,7 +14385,7 @@ div.x-trigger.x-grouped {
 .x-thumb {
     height: 18px;
     width: 18px;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     border-radius: 9px;
     margin-top: -9px;
@@ -14469,7 +14416,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/slider/Thumb.scss:241 */
 .x-thumb-toggle-on {
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/slider/Thumb.scss:255 */
@@ -14785,7 +14732,7 @@ div.x-trigger.x-grouped {
     bottom: 0px;
     left: 0px;
     pointer-events: none;
-    border: 1px solid #9c60b7;
+    border: 1px solid #4487c1;
     border: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
@@ -14961,7 +14908,7 @@ div.x-trigger.x-grouped {
     bottom: 0px;
     left: 0px;
     pointer-events: none;
-    border: 1px solid #9c60b7;
+    border: 1px solid #4487c1;
     border: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/menu/CheckItem.scss:476 */
@@ -15202,7 +15149,7 @@ div.x-trigger.x-grouped {
     bottom: 0px;
     left: 0px;
     pointer-events: none;
-    border: 1px solid #9c60b7;
+    border: 1px solid #4487c1;
     border: 1px solid var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/menu/CheckItem.scss:476 */
@@ -15265,7 +15212,7 @@ div.x-trigger.x-grouped {
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/cell/Check.scss:167 */
 .x-checkcell.x-checked .x-checkbox-el,
 .x-selected > * .x-checkcell.x-selection-cell .x-checkbox-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
@@ -15280,7 +15227,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/cell/Check.scss:178 */
 .x-checkcell .x-checkbox-el:focus {
-    color: #ab78c2;
+    color: #6099ca;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:540 */
 .x-checkcolumn .x-checkbox-el {
@@ -15305,7 +15252,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:551 */
 .x-checkcolumn.x-checked .x-checkbox-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
@@ -15319,7 +15266,7 @@ div.x-trigger.x-grouped {
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:561 */
 .x-checkcolumn .x-checkbox-el:focus {
-    color: #ab78c2;
+    color: #6099ca;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:565 */
 .x-checkcolumn.x-checkbox-align-top .x-title-el {

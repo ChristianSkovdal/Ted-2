@@ -37,7 +37,7 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/src/grid/plugin/ViewOptions.scss:30 */
 .x-column-options-visibleindicator.x-icon-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
@@ -70,7 +70,7 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/src/grid/plugin/ViewOptions.scss:68 */
 .x-column-options-grouped .x-column-options-groupindicator.x-icon-el {
-    color: #9c60b7;
+    color: #4487c1;
     color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/src/layout/Form.scss:1 */
@@ -173,7 +173,7 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/panel/Resizer.scss:283 */
 .x-panelresizer-proxy.x-handle {
-    border: 1px dashed #743f8b;
+    border: 1px dashed #2e608b;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/panel/Resizer.scss:289 */
 .x-panelresizer-proxy.x-splitter {
@@ -235,7 +235,7 @@
 .x-tab .x-inner-el {
     padding: 16px 6px;
     border-width: 0;
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
     border-radius: 0;
@@ -362,7 +362,7 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
 .x-tab.x-hovered .x-inner-el {
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -386,7 +386,7 @@
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
 .x-tab.x-pressing .x-inner-el,
 .x-tab.x-pressed .x-inner-el {
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -406,7 +406,7 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Button.scss:1444 */
 .x-keyboard-mode .x-tab.x-focused .x-inner-el {
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -472,7 +472,7 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1438 */
 .x-tab.x-active .x-inner-el {
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -504,11 +504,11 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1490 */
 .x-keyboard-mode .x-tab.x-active.x-focused:after {
-    border-color: #ebdff1;
+    border-color: #dae7f3;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Toolbar.scss:330 */
 .x-tabbar {
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
     background-image: none;
     border-color: #e1e1e1;
@@ -529,7 +529,7 @@
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/tab/Bar.scss:335 */
 .x-strip-el {
-    background-color: #9c60b7;
+    background-color: #4487c1;
     background-color: var(--base-color);
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/cell/Tree.scss:433 */
@@ -618,12 +618,12 @@
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-material/sass/src/Component.scss:5 */
 :root {
     --dark-mode: false;
-    --base-color: #9c60b7;
+    --base-color: #4487c1;
     --base-highlight-color: #64b5f6;
     --base-light-color: #bbdefb;
     --base-dark-color: #1976d2;
-    --base-pressed-color: #bd95cf;
-    --base-invisible-color: rgba(156, 96, 183, 0);
+    --base-pressed-color: #7dacd4;
+    --base-invisible-color: rgba(68, 135, 193, 0);
     --base-foreground-color: #fff;
     --accent-color: #ff9800;
     --accent-light-color: #ffe0b2;
@@ -4591,8 +4591,51 @@ body {
 .x-big .x-tabbar-body-el {
     padding: 0;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:1 */
-.main-container {
-    background-color: #9c60b7;
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/authentication/AuthBase.scss:1 */
+.auth-locked-body-el {
+    /*background-image: url('/images/Lighthouse.jpg');*/
+    /*background-image: url('/images/Lighthouse.jpg');*/
+    background-color: whitesmoke;
+    background-size: cover;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/authentication/AuthBase.scss:6 */
+.auth-locked-body-el .x-panel-body-el.auth-locked-body-el {
+    background-color: transparent;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/authentication/LockScreen.scss:1 */
+.lockscreen-header {
+    background-color: #4487c1;
     background-color: var(--base-color);
+    color: white;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/authentication/LockScreen.scss:6 */
+.lockscreen-header .x-paneltitle .x-icon-el {
+    background-size: cover;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:6 */
+.main-view .x-panel-header {
+    background-color: #b6ff00 !important;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:10 */
+.main-nav-container,
+.main-logo {
+    position: relative;
+    transition: width 0.3s;
+    width: 260px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:16 */
+.main-toolbar {
+    z-index: 1;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:19 */
+.main-toolbar > .x-body-el {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:24 */
+.main-logo,
+.main-toolbar {
+    height: 65px;
 }

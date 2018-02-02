@@ -13,13 +13,12 @@ Ext.define('Ted.view.main.Main', {
 
 
     navigationBar: false,
-    
-    userCls: 'main-container',
+
+    innerCls: 'main-view',
 
     platformConfig: {
         desktop: {
-            //title: 'Test',
-            
+            //title: 'Test',            
         },
         '!desktop': {
             //title: 'Demo',
@@ -28,69 +27,71 @@ Ext.define('Ted.view.main.Main', {
 
     },
 
-    //items: [{
-    //    xtype: 'maintoolbar',
-    //    docked: 'top',
-    //    userCls: 'main-toolbar',
-    //    shadow: true
-    //}, {
-    //    xtype: 'container',
-    //    docked: 'left',
-    //    userCls: 'main-nav-container',
-    //    reference: 'navigation',
-    //    layout: 'fit',
-    //    items: [{
-    //        xtype: 'treelist',
-    //        reference: 'navigationTree',
-    //        scrollable: true,
-    //        ui: 'nav',
-    //        store: 'NavigationTree',
-    //        expanderFirst: false,
-    //        expanderOnly: false,
-    //        listeners: {
-    //            //itemclick: 'onNavigationItemClick',
-    //            //selectionchange: 'onNavigationTreeSelectionChange'
-    //        }
-    //    }]
-    //}]
-    
+    items: [
+        //{
+        //    xtype: 'panel',
+        //    cls: 'main-view',
+        //    height: 500,
+        //    //bodyStyle:'background: red;'
+        //    header: {
+        //        cls: 'configurationHeader',
+        //        title: 'EVENT SUBSCRIPTION'
+        //    }
+        //},
+        {
+            xtype: 'maintoolbar',
+            docked: 'top',
+            userCls: 'main-toolbar',
+            shadow: true
+        }, {
+            xtype: 'container',
+            docked: 'left',
+            userCls: 'main-nav-container',
+            reference: 'navigation',
+            layout: 'fit',
+            items: [{
+                xtype: 'treelist',
+                reference: 'navigationTree',
+                scrollable: true,
+                ui: 'nav',
+                store: 'NavigationTree',
+                expanderFirst: false,
+                expanderOnly: false,
+                listeners: {
+                    //itemclick: 'onNavigationItemClick',
+                    //selectionchange: 'onNavigationTreeSelectionChange'
+                },
+                //store: {
 
-    //defaults: {
-    //    tab: {
-    //        iconAlign: 'top'
-    //    }
-    //},
+                //    storeId: 'NavigationTree',
 
-    //tabBarPosition: 'bottom',
+                //    fields: [{
+                //        name: 'text'
+                //    }],
 
-    //items: [
-    //    // TODO - Replace the content of this view to suit the needs of your application.
-    //    {
-    //        title: 'Home',
-    //        iconCls: 'x-fa fa-home',
-    //        layout: 'fit',
-    //        // The following grid shares a store with the classic version's grid as well!
-    //        items: [{
-    //            xtype: 'mainlist'
-    //        }]
-    //    },{
-    //        title: 'Users',
-    //        iconCls: 'x-fa fa-user',
-    //        bind: {
-    //            html: '{loremIpsum}'
-    //        }
-    //    },{
-    //        title: 'Groups',
-    //        iconCls: 'x-fa fa-users',
-    //        bind: {
-    //            html: '{loremIpsum}'
-    //        }
-    //    },{
-    //        title: 'Settings',
-    //        iconCls: 'x-fa fa-cog',
-    //        bind: {
-    //            html: '{loremIpsum}'
-    //        }
-    //    }
-    //]
+                //    root: {
+                //        expanded: true,
+                //        children: [
+                //            {
+                //                text: 'Dashboard',
+                //                iconCls: 'x-fa fa-desktop',
+                //                //rowCls: 'nav-tree-badge nav-tree-badge-new',
+                //                viewType: 'admindashboard',
+                //                routeId: 'dashboard', // routeId defaults to viewType
+                //                leaf: true
+                //            },
+                //            {
+                //                text: 'Health Check Details',
+                //                iconCls: 'x-fa fa-send',
+                //                //rowCls: 'nav-tree-badge nav-tree-badge-hot',
+                //                viewType: 'email',
+                //                leaf: true
+                //            }
+                //        ]
+                //    }
+
+                //}
+            }]
+        }]
+
 });

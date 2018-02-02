@@ -1,0 +1,10 @@
+﻿.configurationHeader {
+    background-color: grey !important;
+    background-image: none;
+}
+
+.auth-locked-body-el {
+    background-image: url('/images/Lighthouse.jpg') !important;
+    background-color: red !important;
+    background-size: cover;
+}
