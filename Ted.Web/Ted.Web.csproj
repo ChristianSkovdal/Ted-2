@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\app\model\" />
     <Folder Include="wwwroot\app\store\" />
   </ItemGroup>
 

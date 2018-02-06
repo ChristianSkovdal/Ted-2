@@ -5,7 +5,9 @@
 	title: 'New Workspace',
 
 	controller: 'newworkspacedlg',
-	viewModel: 'newworkspacedlg',
+    viewModel: {
+        ws: {}
+    },
 
 	width: 400,
 	closable: true,

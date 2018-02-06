@@ -18,12 +18,12 @@ Ext.define('Ted.view.authentication.AuthController', {
                 let vm = this.getViewModel();
 				vm.set('user', result.data);
 
-                let redir = vm.get('redirectTo');
+                let redir = vm.get('redirectTo', true);
                 if (redir) {
-                    this.redirectTo(redir);
+                    this.redirectTo(redir, true);
                 }
                 else {
-                    this.redirectTo('workspacelist');
+                    this.redirectTo('workspacelist', true);
                 }
                     
 
@@ -47,14 +47,14 @@ Ext.define('Ted.view.authentication.AuthController', {
                 fullName: vm.get('fullname')
             },
             (result) => {
-                Ext.Msg.alert('Registration', 'User successfully created', () => me.redirectTo('login'));
+                Ext.Msg.alert('Registration', 'User successfully created', () => me.redirectTo('login', true));
             }
         );
 
     },
 
     goToRegister() {
-        this.redirectTo('register');
+        this.redirectTo('register', true);
     },
 
     

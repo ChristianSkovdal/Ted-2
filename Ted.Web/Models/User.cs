@@ -18,7 +18,7 @@ namespace Ted
         public string token { get; set; }
 
         // Workspaces created by me
-        //public  ICollection<Workspace> myWorkspaces { get; set; }
+        public virtual ICollection<Workspace> myWorkspaces { get; set; } = new List<Workspace>();
 
         //// List of workspaces I use
         //public string workspaceList { get; set; }

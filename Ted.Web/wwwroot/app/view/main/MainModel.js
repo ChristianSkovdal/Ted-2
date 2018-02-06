@@ -11,7 +11,6 @@ Ext.define('Ted.view.main.MainModel', {
 
         showAuthoringTools: false,
 
-        stuff: 'Hello!'
     }
 
 });

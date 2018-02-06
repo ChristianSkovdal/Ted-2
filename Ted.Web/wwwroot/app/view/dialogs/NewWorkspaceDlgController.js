@@ -13,11 +13,10 @@ Ext.define('Ted.view.dialogs.NewWorkspaceDlgController', {
     //},
 
     onTextFieldFocus(cmp) {
-        let mainVm = Ted.app.getMainView().getViewModel();
         let vm = this.getViewModel();
         vm.set('ws', {
             name: 'My new workspace',
-            description: 'New workspace created by ' + mainVm.get('user').fullName
+            description: 'New workspace created by ' + App.getUser().fullName
         });
         this.callParent(arguments);
     }

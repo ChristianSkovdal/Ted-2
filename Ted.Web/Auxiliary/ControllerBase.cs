@@ -11,9 +11,12 @@ namespace Ted
     {
         protected readonly TedContext _db;
 
-        public ControllerBase(TedContext db)
+        protected readonly AuthenticationHandler _auth;
+
+        public ControllerBase(TedContext db, AuthenticationHandler auth)
         {
             _db = db;
+            _auth = auth;
         }
 
         public new void Dispose()

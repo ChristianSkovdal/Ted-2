@@ -3,42 +3,16 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 
-namespace Ted.Server.Web.Controllers
+namespace Ted
 {
     [Route("api/[controller]")]
     public class UserController : ControllerBase<User>
     {
-        public UserController(TedContext db)
-            :base(db)
+        public UserController(TedContext db, AuthenticationHandler auth)
+            :base(db, auth)
         {            
         }
-
-        //[HttpGet("{token}")]
-        //public JsonResult Get(string token)
-        //{
-        //    if (!_auth.IsSuperUser(token))
-        //        throw new TedExeption(ExceptionCodes.NotSuperUser);
-
-        //    return Json(new
-        //    {
-        //        success = true,
-        //        data = _repo.GetAll()
-        //    });
-        //}
-
-        //[HttpGet("{token}/{id}")]
-        //public JsonResult Get(string token, int id)
-        //{
-        //    if (_auth.Authenticate(token, id)==null && !_auth.IsSuperUser(token))
-        //        throw new TedExeption(ExceptionCodes.Authentication);
-
-        //    return Json(new
-        //    {
-        //        success = true,
-        //        data = _repo.GetOne(id)
-        //    });
-        //}
-
+        
         [HttpPost]
         public JsonResult CreateUser([FromBody]User value)
         {
@@ -61,7 +35,7 @@ namespace Ted.Server.Web.Controllers
         [HttpPut("{token}/{id}")]
         public void UpdateUser(string token, int id, [FromBody]JObject value)
         {
-            if (Authenticate(token, id) == null)
+            if (_auth.Authenticate(token, id) == null)
                 throw new TedExeption(ExceptionCodes.Authentication);
 
             Update(id, value);
@@ -70,7 +44,7 @@ namespace Ted.Server.Web.Controllers
         [HttpDelete("{token}/{id}")]
         public void Delete(string token, int id)
         {
-            if (Authenticate(token, id) == null)
+            if (_auth.Authenticate(token, id) == null)
                 throw new TedExeption(ExceptionCodes.Authentication);
 
             Delete(id);
@@ -101,20 +75,7 @@ namespace Ted.Server.Web.Controllers
                 });
             }
         }
-
-        public User Authenticate(string token)
-        {
-            return _db.Users.SingleOrDefault(u => u.token == token && !u.deleted);
-        }        
-
-        public User Authenticate(string token, int userId)
-        {
-            var user = _db.Users.SingleOrDefault(u => u.token == token);
-            if (user != null && (user.id == userId || user.isSuperUser))
-                return user;
-            return null;
-        }
-
+        
         public User Login(string username, string password)
         {
             var user = _db.Users.SingleOrDefault(u => username.Equals(u.email, StringComparison.OrdinalIgnoreCase) && u.password == password);

@@ -1,3 +1,226 @@
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/cell/Check.scss:156 */
+.x-checkcell .x-checkbox-el {
+    color: rgba(17, 17, 17, 0.54);
+    color: var(--highlight-color);
+    width: 18px;
+    height: 18px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+.x-big .x-checkcell .x-checkbox-el {
+    width: 20px;
+    height: 20px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.x-checkcell .x-checkbox-el:before {
+    content: 'check_box_outline_blank';
+    font-size: 18px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:122 */
+.x-big .x-checkcell .x-checkbox-el:before {
+    font-size: 20px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/cell/Check.scss:167 */
+.x-checkcell.x-checked .x-checkbox-el,
+.x-selected > * .x-checkcell.x-selection-cell .x-checkbox-el {
+    color: #4487c1;
+    color: var(--base-color);
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.x-checkcell.x-checked .x-checkbox-el:before,
+.x-selected > * .x-checkcell.x-selection-cell .x-checkbox-el:before {
+    content: 'check_box';
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/cell/Check.scss:173 */
+.x-checkcell.x-disabled .x-checkbox-el {
+    color: rgba(17, 17, 17, 0.38);
+    color: var(--disabled-color);
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/cell/Check.scss:178 */
+.x-checkcell .x-checkbox-el:focus {
+    color: #6099ca;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:540 */
+.x-checkcolumn .x-checkbox-el {
+    color: rgba(17, 17, 17, 0.54);
+    color: var(--highlight-color);
+    width: 18px;
+    height: 18px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+.x-big .x-checkcolumn .x-checkbox-el {
+    width: 20px;
+    height: 20px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.x-checkcolumn .x-checkbox-el:before {
+    content: 'check_box_outline_blank';
+    font-size: 18px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:122 */
+.x-big .x-checkcolumn .x-checkbox-el:before {
+    font-size: 20px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:551 */
+.x-checkcolumn.x-checked .x-checkbox-el {
+    color: #4487c1;
+    color: var(--base-color);
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.x-checkcolumn.x-checked .x-checkbox-el:before {
+    content: 'check_box';
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:556 */
+.x-checkcolumn.x-disabled .x-checkbox-el {
+    color: rgba(17, 17, 17, 0.38);
+    color: var(--disabled-color);
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:561 */
+.x-checkcolumn .x-checkbox-el:focus {
+    color: #6099ca;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:565 */
+.x-checkcolumn.x-checkbox-align-top .x-title-el {
+    margin-top: 2px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:569 */
+.x-big .x-checkcolumn.x-checkbox-align-top .x-title-el {
+    margin-top: 3px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:575 */
+.x-checkcolumn.x-checkbox-align-right .x-title-el {
+    margin-right: 4px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:579 */
+.x-big .x-checkcolumn.x-checkbox-align-right .x-title-el {
+    margin-right: 6px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:585 */
+.x-checkcolumn.x-checkbox-align-bottom .x-title-el {
+    margin-bottom: 2px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:589 */
+.x-big .x-checkcolumn.x-checkbox-align-bottom .x-title-el {
+    margin-bottom: 3px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:595 */
+.x-checkcolumn.x-checkbox-align-left .x-title-el {
+    margin-left: 4px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:599 */
+.x-big .x-checkcolumn.x-checkbox-align-left .x-title-el {
+    margin-left: 6px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/Grid.scss:37 */
+.x-grid .x-resize-marker-el {
+    background-color: #e2e2e2;
+    background-color: var(--divider-color);
+    width: 1px;
+    z-index: 1;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:30 */
+.x-expandercell-body-el {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:34 */
+.x-big .x-expandercell-body-el {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:40 */
+.x-expandercell-tool-dock {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:44 */
+.x-big .x-expandercell-tool-dock {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:49 */
+.x-expandercell-tool-dock > .x-body-el {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:53 */
+.x-big .x-expandercell-tool-dock > .x-body-el {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/grid/cell/Expander.scss:116 */
+.x-expandercell .x-icon-el {
+    color: #b0b0b0;
+    width: 18px;
+    height: 18px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+.x-big .x-expandercell .x-icon-el {
+    width: 24px;
+    height: 24px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.x-expandercell .x-icon-el:before {
+    content: 'expand_more';
+    font-family: 'Material Icons';
+    font-size: 18px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:122 */
+.x-big .x-expandercell .x-icon-el:before {
+    font-size: 24px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.x-expandercell.x-expanded .x-icon-el:before {
+    content: 'expand_less';
+    font-family: 'Material Icons';
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:30 */
+.x-widgetcell-body-el {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:34 */
+.x-big .x-widgetcell-body-el {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:40 */
+.x-widgetcell-tool-dock {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:44 */
+.x-big .x-widgetcell-tool-dock {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:49 */
+.x-widgetcell-tool-dock > .x-body-el {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/mixin/Toolable.scss:53 */
+.x-big .x-widgetcell-tool-dock > .x-body-el {
+    padding: 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/var/Toolbar.scss:330 */
+.x-pagingtoolbar {
+    color: #111;
+    color: var(--color);
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.x-pagingtoolbar .x-pagingtoolbar-prev:before {
+    content: "\f104";
+    font-family: FontAwesome;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.x-pagingtoolbar .x-pagingtoolbar-next:before {
+    content: "\f105";
+    font-family: FontAwesome;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/src/grid/plugin/ViewOptions.scss:1 */
+.x-gridviewoptions {
+    background-color: #fafafa;
+    background-color: var(--background-color);
+    border-color: #e1e1e1;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-neptune/sass/src/grid/plugin/ViewOptions.scss:6 */
+.x-column-options-sortablehandle,
+.x-column-options-visibleindicator,
+.x-column-options-groupindicator,
+.x-column-options-folder,
+.x-column-options-leaf {
+    width: 16px;
+    height: 16px;
+}
 /* C:/dev/test/Ted/Ted.Web/wwwroot/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
 .x-big .x-column-options-sortablehandle,
 .x-big .x-column-options-visibleindicator,
@@ -4689,13 +4912,13 @@ body {
     margin: 18px;
     background-color: #eee;
     padding: 10px;
-    -webkit-box-shadow: 0px 4px 4px -3px black;
-    -moz-box-shadow: 0px 4px 4px -3px black;
-    box-shadow: 0px 4px 4px -3px black;
+    -webkit-box-shadow: 0px 4px 4px -3px gray;
+    -moz-box-shadow: 0px 4px 4px -3px gray;
+    box-shadow: 0px 4px 4px -3px gray;
 }
 /* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:7 */
 .workspacelist .header {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     margin-bottom: 8px;
 }
@@ -4703,11 +4926,11 @@ body {
 .workspacelist .empty {
     text-align: center;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:19 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:18 */
 .workspace-item {
     width: 118px;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:22 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:21 */
 .workspace-item img {
     border-radius: 5%;
     -webkit-user-drag: none;
@@ -4717,7 +4940,7 @@ body {
     margin-top: 8px;
     margin-left: 16px;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:30 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:29 */
 .workspace-item .name {
     font-size: 12px;
     font-weight: normal;
@@ -4729,11 +4952,11 @@ body {
     white-space: nowrap;
     overflow: hidden;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:43 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:42 */
 .workspace-item.x-focused {
     background-color: deepskyblue;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:46 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/pages/WorkSpaceList.scss:45 */
 .dark-mode .workspace-item.x-focused {
     background-color: #232323;
 }

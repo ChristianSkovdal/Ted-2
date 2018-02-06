@@ -88,7 +88,7 @@
                     },
 
                     itemTpl: '<div class="workspace-item">' +
-                    '<img draggable="false" src="{image}" />' +
+                    '<img draggable="false" src="/images/ws.png" />' +
                     '<div class="name">{name}</div>' +
                     //'<div class="name">{startPageId}</div>' +
                     '</div>',
@@ -101,20 +101,23 @@
                 {
                     xtype: 'container',
                     flex: 1,
+                    itemId: 'infoView',
+          
                     tpl: Ext.create('Ext.XTemplate', 
-                    '<div class="workspacelist">' +
-                        '<tpl if="!ws">' +
-                            '<div class="empty">Select a workspace to get details</div>' +
-                        '<tpl else>' +
-                            '<div class="header">Name: {[values.ws.getData().name]}</div>' +
-                            '<div>{[values.ws.getData().description]}</div>' +
-                        '</tpl>' +
-                    '</div>'),
-
+                        '<div class="workspacelist">' +
+                            '<tpl if="!ws">' +
+                                '<div class="empty">Select a workspace to get details<br/>' +
+                        //'or <a href="javascript:void(0);" id="createNew">create a new one</a></div>' +
+                                'or <a href="#" id="createNew">create a new one</a></div>' +
+                            '<tpl else>' +
+                                '<div class="header">{[values.ws.getData().name]}</div>' +
+                                '<div>{[values.ws.getData().description]}</div>' +
+                            '</tpl>' +
+                        '</div>'),
                     bind: {
                         data: {
                             ws: '{workspace}'
-                        }
+                        },                        
                     }
                 }
             ]

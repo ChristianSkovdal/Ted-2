@@ -16,7 +16,7 @@
             childdoubletap: function (view, location, options) {
                 this.openItem(location.record);
             },
-            select: function (cmp, selected) {              
+            select: function (cmp, selected) {
                 if (Array.isArray(selected)) {
                     selected = selected[0];
                 }
@@ -45,14 +45,12 @@
         dialog.on('ok', (cmp, data) => {
 
             let store = view.getStore();
-            let me = this;
-
-            let name = data[view.getNameProperty()]
-            if (store.findCaseInsensitive('name', name)) {
+            let name = data.ws[view.getNameProperty()]
+            if (store.findCaseInsensitive(view.getNameProperty(), name)) {
                 Ext.Msg.alert(view.getNameContext(), Ext.String.format(view.getAlreadyExistErrorMsg(), name), f => dialog.down('textfield').focus());
             }
             else {
-                store.insert(0, data);
+                store.insert(0, data.ws);
                 store.sync({
                     callback(batch, opt) {
                         view.setSelection(store.first());
@@ -83,19 +81,21 @@
         let view = this.getView();
         let record = view.getSelection();
 
-        Ext.Msg.confirm(view.getNameContext(), Ext.String.format(view.getDeleteConfirmationMsg(), record.get(view.getNameProperty())), answer => {
+        Ext.Msg.confirm(view.getNameContext(),
+            Ext.String.format(view.getDeleteConfirmationMsg(), record.get(view.getNameProperty())), answer => {
 
-            if (answer === 'yes') {                
-                store.remove(record);
-                store.sync({
-                    callback(batch, opt) {
-                        if (store.count() > 0) {
-                            view.setSelection(store.first());
+                if (answer === 'yes') {
+                    let store = view.getStore();
+                    store.remove(record);
+                    store.sync({
+                        callback(batch, opt) {
+                            if (store.count() > 0) {
+                                view.setSelection(store.first());
+                            }
                         }
-                    }
-                });
-            }
-        });
+                    });
+                }
+            });
     },
 
 

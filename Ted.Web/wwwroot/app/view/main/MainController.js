@@ -59,7 +59,7 @@ Ext.define('Ted.view.main.MainController', {
 
         }
 
-        debugger;
+        
 
         if (isValidId(pageHash)) {
             this.loadPageMetaData(pageHash, page => {
@@ -94,7 +94,7 @@ Ext.define('Ted.view.main.MainController', {
             }, doLogin);
         }
         else {
-            if (pageHash === 'workspacelist' && !App.getUser()) {
+            if (['login','register'].indexOf(pageHash) < 0 && !App.getUser()) {
                 doLogin();
             }
             else {
@@ -113,10 +113,10 @@ Ext.define('Ted.view.main.MainController', {
         }
 
         if (isValidId(pageHash)) {
-            this.redirectTo('login' + '>redirectTo=' + pageHash);
+            this.redirectTo('login' + '>redirectTo=' + pageHash, true);
         }
         else {
-            this.redirectTo('login');
+            this.redirectTo('login', true);
         }
 
 
@@ -138,9 +138,10 @@ Ext.define('Ted.view.main.MainController', {
             if (!item) {
                 item = {
                     xtype: xtype
-                }
-                item = view.setActiveItem(item);
+                }                
             }
+
+            item = view.setActiveItem(item);
 
             if (tokens.length > 1) {
                 for (var i = 0; i < length; i++) {
@@ -151,7 +152,7 @@ Ext.define('Ted.view.main.MainController', {
 
         } catch (e) {
             Ext.Msg.alert('Error Loading Page ' + xtype, e.message);
-            this.redirectTo('login');
+            this.redirectTo('login', true);
             return;
         }
 
@@ -184,7 +185,7 @@ Ext.define('Ted.view.main.MainController', {
             view.setActiveItem(item);
         } catch (e) {
             Ext.Msg.alert('Error Loading Page ' + viewType, e.message);
-            this.redirectTo('login');
+            this.redirectTo('login', true);
             return;
         }
 
@@ -251,14 +252,13 @@ Ext.define('Ted.view.main.MainController', {
         // public = only load public pages
 
         let SIMULATED_WORKSPACE_FROM_SERVER = {
-            navigationStoreChildren: [],
             startUpCode: '',//'alert("Loading!!!");',
             shutDownCode: '',
             navigation: '',
             startPageId: 123
         };
 
-        new Function('controller', SIMULATED_WORKSPACE_FROM_SERVER.startUpCode)(this);
+        new Function('main', 'workspace', SIMULATED_WORKSPACE_FROM_SERVER.startUpCode)(this.getView(), null);
 
         // Populate NavigationStore from workspace
         //let navigation = JSON.parse(SIMULATED_WORKSPACE_FROM_SERVER.navigation);
