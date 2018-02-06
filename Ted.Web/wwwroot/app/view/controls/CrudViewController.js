@@ -2,7 +2,24 @@
     extend: 'Ext.app.ViewController',
     alias: 'controller.crudview',
 
- 
+    control: {
+        '#': {
+            painted: function (cmp) {
+                this.lookupReference('grid').setStore(cmp.getStore());
+                this.lookupReference('item').setStore(cmp.getStore());
+            }
+        },
+        'crudview>container': {
+            painted: function (cmp) {
+                if (cmp.getStore && !cmp.getStore()) {
+                    cmp.setStore(this.getView().getStore());
+                }
+            }
+
+        }
+
+    },
+
     addButtonClick() {
 
         let view = this.getView();
@@ -28,7 +45,6 @@
                     callback(batch, opt) {
                         vm.set('selectedItem', store.first());
                         dialog.destroy();
-                        //me.redirectTo('page:' + store.first().get('startPageId'));
                     }
                 });
             }
@@ -45,17 +61,17 @@
         this.openItem(location.record);
     },
 
-    openItemButtonClick() {
+    openButtonClick() {
         let vm = this.getViewModel();
-        this.openWorkspace(vm.get('selectedItem'));
+        this.openItem(vm.get('selectedItem'));
     },
 
     openItem(record) {
         let vm = this.getViewModel();
-        this.getView().fireEvent('open', this.getgView(), record);
+        this.getView().fireEvent('open', this.getView(), record);
     },
 
-    deleteWorkspaceButtonClick() {
+    deleteButtonClick() {
 
         let view = this.getView();
 

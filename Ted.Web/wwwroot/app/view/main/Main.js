@@ -6,6 +6,7 @@ Ext.define('Ted.view.main.Main', {
         'Ext.Button',
         'Ext.list.Tree',
         'Ext.navigation.View',
+        'Ted.view.pages.WorkspaceList'
     ],
 
     controller: 'main',

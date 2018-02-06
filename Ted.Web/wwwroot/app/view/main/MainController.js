@@ -68,10 +68,8 @@ Ext.define('Ted.view.main.MainController', {
                         this.loadPageContents(page);
 
                     }, doLogin);
-
                 }
                 else {
-
                     if (this.getViewModel().get('user')) {
 
                         if (this.getViewModel().get('workspace')) {
@@ -85,19 +83,16 @@ Ext.define('Ted.view.main.MainController', {
 
                             }, doLogin);
                         }
-
                     }
                     else {
                         doLogin();
                     }
                 }
-
             }, doLogin);
         }
         else {
             this.showSystemPage(pageHash);
         }
-
     },
 
     showWorkspaceList() {
@@ -121,6 +116,7 @@ Ext.define('Ted.view.main.MainController', {
 
     showSystemPage(xtype, showTools) {
 
+        
         // Hide tools
         this.getViewModel().set('showAuthoringTools', showTools);
 

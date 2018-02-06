@@ -771,7 +771,6 @@ $include-ted-view-controls-commandbutton: dynamic(true);;
 $include-ted-view-controls-crudview: dynamic(true);;
 $include-ted-view-controls-crudviewcontroller: dynamic(true);;
 $include-ted-view-controls-logo: dynamic(true);;
-$include-ted-view-controls-workspacelist: dynamic(true);;
 $include-ted-view-dialogs-basedlg: dynamic(true);;
 $include-ted-view-dialogs-basedlgcontroller: dynamic(true);;
 $include-ted-view-dialogs-importdlg: dynamic(true);;
@@ -788,6 +787,8 @@ $include-ted-view-main-crudviewmodel: dynamic(true);;
 $include-ted-view-main-main: dynamic(true);;
 $include-ted-view-main-maincontroller: dynamic(true);;
 $include-ted-view-main-mainmodel: dynamic(true);;
+$include-ted-view-pages-workspacelistcontroller: dynamic(true);;
+$include-ted-view-pages-workspacelist: dynamic(true);;
 $include-util: dynamic(true);;
 $output-paths: ("path": "../../modern/resources", "shared": "../../resources");
 
@@ -1295,6 +1296,14 @@ $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/authentication/LockScreen';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\controls\CrudView.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/controls/CrudView';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\dialogs\TEditorWindow.js */
 $default-resource-root: '' !default;

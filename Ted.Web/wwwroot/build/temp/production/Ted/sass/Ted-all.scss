@@ -590,8 +590,8 @@ $include-ext-panel-datetitle: dynamic(false);;
 $include-ext-panel-dateview: dynamic(false);;
 $include-ext-panel-header: dynamic(true);;
 $include-ext-panel-panel: dynamic(true);;
-$include-ext-panel-resizable: dynamic(false);;
-$include-ext-panel-resizer: dynamic(false);;
+$include-ext-panel-resizable: dynamic(true);;
+$include-ext-panel-resizer: dynamic(true);;
 $include-ext-panel-title: dynamic(true);;
 $include-ext-panel-tool: dynamic(true);;
 $include-ext-panel-yearpicker: dynamic(false);;
@@ -771,11 +771,23 @@ $include-ted-view-controls-commandbutton: dynamic(true);;
 $include-ted-view-controls-crudview: dynamic(true);;
 $include-ted-view-controls-crudviewcontroller: dynamic(true);;
 $include-ted-view-controls-logo: dynamic(true);;
-$include-ted-view-controls-workspacelist: dynamic(true);;
+$include-ted-view-dialogs-basedlg: dynamic(true);;
+$include-ted-view-dialogs-basedlgcontroller: dynamic(true);;
+$include-ted-view-dialogs-importdlg: dynamic(true);;
+$include-ted-view-dialogs-newpagedialog: dynamic(true);;
+$include-ted-view-dialogs-newpagedlgcontroller: dynamic(true);;
+$include-ted-view-dialogs-newpagedlgmodel: dynamic(true);;
+$include-ted-view-dialogs-newworkspacedialog: dynamic(true);;
+$include-ted-view-dialogs-newworkspacedlgcontroller: dynamic(true);;
+$include-ted-view-dialogs-newworkspacedlgmodel: dynamic(true);;
+$include-ted-view-dialogs-teditorwindow: dynamic(true);;
+$include-ted-view-dialogs-teditorwindowcontroller: dynamic(true);;
+$include-ted-view-dialogs-teditorwindowmodel: dynamic(true);;
 $include-ted-view-main-crudviewmodel: dynamic(true);;
 $include-ted-view-main-main: dynamic(true);;
 $include-ted-view-main-maincontroller: dynamic(true);;
 $include-ted-view-main-mainmodel: dynamic(true);;
+$include-ted-view-pages-workspacelist: dynamic(true);;
 $include-util: dynamic(true);;
 $output-paths: ("path": "../../modern/resources", "shared": "../../resources");
 
@@ -1077,6 +1089,7 @@ $relative-image-path-for-uis: $theme-base-resource-path;
 @import '../../../../../ext/modern/theme-base/sass/src/field/Checkbox';
 @import '../../../../../ext/modern/theme-base/sass/src/panel/Title';
 @import '../../../../../ext/modern/theme-base/sass/src/panel/Header';
+@import '../../../../../ext/modern/theme-base/sass/src/panel/Resizer';
 
 /* including package font-awesome */
 $font-awesome-resource-root: 'font-awesome' !default;
@@ -1122,6 +1135,7 @@ $relative-image-path-for-uis: $theme-neptune-resource-path;
 @import '../../../../../ext/modern/theme-neptune/sass/src/tip/ToolTip';
 @import '../../../../../ext/modern/theme-neptune/sass/src/field/Checkbox';
 @import '../../../../../ext/modern/theme-neptune/sass/src/field/trigger/Reveal';
+@import '../../../../../ext/modern/theme-neptune/sass/src/panel/Resizer';
 
 /* including package theme-material */
 $theme-material-resource-root: '' !default;
@@ -1151,6 +1165,14 @@ $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/authentication/LockScreen';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\dialogs\TEditorWindow.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/dialogs/TEditorWindow';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\main\Main.js */
 $default-resource-root: '' !default;

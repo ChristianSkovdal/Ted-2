@@ -1,0 +1,32 @@
+﻿.dataview-item {
+    width: 118px;
+
+    img {
+        border-radius: 5%;
+        -webkit-user-drag: none;
+        @include box-shadow(0px 8px 10px -6px black);
+        margin-top: 8px;
+        margin-left: 16px;
+    }
+
+    .name {
+        font-size: 12px;
+        font-weight: normal;
+        text-align: center;
+        padding-top: 5px;
+        margin: 0;
+        overflow: hidden;
+        //width: 110px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &.x-focused {
+        background-color: deepskyblue;
+
+        .dark-mode & {
+            background-color: #232323;
+        }
+    }
+}

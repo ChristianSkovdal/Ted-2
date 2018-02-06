@@ -14,7 +14,7 @@ Ext.define('Ted.view.authentication.AuthController', {
         AjaxUtil.post('api/user/login',
             login,
             (result) => {
-debugger;
+
                 let vm = this.getViewModel();
 				vm.set('user', result.data);
 

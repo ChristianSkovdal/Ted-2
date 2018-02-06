@@ -1,21 +1,72 @@
-﻿Ext.define('Ted.view.controls.WorkspaceList', {
+﻿Ext.define('Ted.view.pages.WorkspaceList', {
     extend: 'Ext.Container',
     xtype: 'workspacelist',
 
-    //layout: 'fit',
-
     require: [
-        'Ted.view.controls.CrudView'
+        'Ted.view.controls.CrudView',
+        'Ext.SegmentedButton'
+
     ],
 
-    listeners: {
-        'open': function (cmp, ws) {
+    controller: 'workspacelist',
 
-            this.redirectTo(ws.get('startPageId'));
-        }
-    },
+    layout: 'fit',
 
     items: [
+        {
+            xtype: 'cmdbar',
+            items: [
+                {
+                    xtype: 'logo',
+                    margin: '0 10 0 0'
+                },
+                {
+                    xtype: 'cmdbutton',
+                    iconCls: 'x-fa fa-plus-circle',
+                    handler: 'addButtonClick',
+                    text: 'Add'
+                },
+                {
+                    xtype: 'cmdbutton',
+                    iconCls: 'x-fa fa-minus-circle',
+                    handler: 'deleteButtonClick',
+                    text: 'Remove',
+                    bind: {
+                        disabled: '{!selectedItem}',
+                    }
+                },
+                {
+                    xtype: 'cmdbutton',
+                    iconCls: 'x-fa fa-refresh',
+                    handler: 'refreshButtonClick',
+                    text: 'Refresh',
+                },
+                {
+                    xtype: 'cmdbutton',
+                    iconCls: 'x-fa fa-check-circle ',
+                    handler: 'openButtonClick',
+                    text: 'Open',
+                    bind: {
+                        disabled: '{!selectedItem}',
+                    },
+                },
+                '->',
+                {
+                    xtype: 'segmentedbutton',
+                    margin: '0 16 0 0',
+                    items: [{
+                        value: 'item',
+                        iconCls: 'x-fa fa-desktop',
+                        handler: 'onSwitchToView'
+                    }, {
+                        value: 'grid',
+                        iconCls: 'x-fa fa-tablet',
+                        pressed: true,
+                        handler: 'onSwitchToView'
+                    }]
+                }
+            ]
+        },
         {
             xtype: 'crudview',
             config: {
@@ -24,24 +75,7 @@
 
                 alreadyExistErrorMsg: 'A workspace with that name already exist',
 
-
                 dialogType: 'newworkspacedlg',
-                store: {
-
-                    fields: ['name'],
-
-                    data: [
-                        {
-                            name: 'Banana',
-                            startPageId: 123
-                        },
-                        {
-                            name: 'Apple',
-                            startPageId: 456
-                        }
-                    ]
-
-                }
             }
         }
     ]

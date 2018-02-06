@@ -4615,6 +4615,40 @@ body {
     height: 64px;
     width: 64px;
 }
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/controls/CrudView.scss:1 */
+.dataview-item {
+    width: 118px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/controls/CrudView.scss:4 */
+.dataview-item img {
+    border-radius: 5%;
+    -webkit-user-drag: none;
+    -webkit-box-shadow: 0px 8px 10px -6px black;
+    -moz-box-shadow: 0px 8px 10px -6px black;
+    box-shadow: 0px 8px 10px -6px black;
+    margin-top: 8px;
+    margin-left: 16px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/controls/CrudView.scss:12 */
+.dataview-item .name {
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    padding-top: 5px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/controls/CrudView.scss:25 */
+.dataview-item.x-focused {
+    background-color: deepskyblue;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/controls/CrudView.scss:28 */
+.dark-mode .dataview-item.x-focused {
+    background-color: #232323;
+}
 /* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/dialogs/TEditorWindow.scss:2 */
 .teditor-multisort-item {
     margin: 8px 8px 4px 8px;
