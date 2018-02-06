@@ -3,36 +3,30 @@
     xtype: 'crudview',
 
     controller: 'crudview',
-    controller: 'crudview',
-
+    layout: 'card',
 
     config: {
         nameContext: 'Items',
-        alreadyExistErrorMsg: 'An item with that name already exist',
-        nameProperty: 'name',        
-    },
-    
-    setStore(s) {
-        this.getController().getViewModel().set('mainStore', s);
-    },
-
-    getStore() {
-        return this.getController().getViewModel().get('mainStore');
-    },
-
-    showCardView() {
-        
+        alreadyExistErrorMsg: 'An item with the name {0} already exist',
+        deleteConfirmationMsg: 'Are you sure you want to delete {0}?',
+        nameProperty: 'name',
+        store: null,
+        dialogType: null,
+        selection: null,
+        itemTpl: '<div class="dataview-item">' +
+        '<img draggable="false" src="{image}" />' +
+        '<div class="name">{name}</div>' +
+        '</div>'
     },
 
-    showGridView() {
-        this.setActiveItem(this.down('grid'));
+    updateSelection(record) {
+        this.getActiveItem().setSelection(record);
     },
 
-    showItemView() {
-        this.setActiveItem(this.down('dataview'));
+     updateItemTpl(tpl) {
+        if (this.down('dataview'))
+            this.down('dataview').setItemTpl(tpl);
     },
-
-    layout: 'card',
 
     items: [
         {
@@ -43,36 +37,23 @@
                     dataIndex: 'name'
                 }
             ],
-            reference: 'grid',
-            bind: {
-                selection: '{selectedItem}'
-            },
         },
         {
             xtype: 'dataview',
             inline: true,
             ui: 'default',
-            flex: 2,
-            reference: 'item',
             margin: 10,
-            bind: {
-                selection: '{selectedItem}'
-            },
-            cls: 'dataview-item',
-
-            itemTpl: '<div class="dataview-item">' +
-            '<img draggable="false" src="{image}" />' +
-            '<div class="name">{name}</div>' +
-            '</div>',
-
-            listeners: {
-                childdoubletap: 'onItemDblTap'
-            }
+            //cls: 'dataview-item',
         }
     ],
 
-    setItemTemplate(tpl) {
-        this.down('dataview').setItemTpl(tpl);
-    }
+    showGridView() {
+        this.setActiveItem(this.down('grid'));
+    },
+
+    showItemView() {
+        this.setActiveItem(this.down('dataview'));
+    },
+
 });
 

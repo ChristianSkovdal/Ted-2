@@ -5,18 +5,30 @@
     control: {
         '#': {
             painted: function (cmp) {
-                this.lookupReference('grid').setStore(cmp.getStore());
-                this.lookupReference('item').setStore(cmp.getStore());
+                //this.lookupReference('grid').setStore(cmp.getStore());
+                //this.lookupReference('item').setStore(cmp.getStore());
             }
         },
         'crudview>container': {
             painted: function (cmp) {
-                if (cmp.getStore && !cmp.getStore()) {
-                    cmp.setStore(this.getView().getStore());
+                cmp.setStore(this.getView().getStore());
+            },
+            childdoubletap: function (view, location, options) {
+                this.openItem(location.record);
+            },
+            select: function (cmp, selected) {              
+                if (Array.isArray(selected)) {
+                    selected = selected[0];
                 }
+                this.getView().publishState('selection', selected);
             }
-
-        }
+        },
+        //'crudview>grid': {
+        //    painted: function (cmp) {
+        //        debugger;
+        //        cmp.setStore(this.getView().getStore());
+        //    }
+        //}
 
     },
 
@@ -31,67 +43,60 @@
         dialog.show();
 
         dialog.on('ok', (cmp, data) => {
-            
+
             let store = view.getStore();
-            let vm = this.getViewModel();
             let me = this;
 
-            if (store.findCaseInsensitive('name', data[view.getNameProperty()])) {
-                Ext.Msg.alert(view.getNameContext(), view.getAlreadyExistErrorMsg(), f => dialog.down('textfield').focus());
+            let name = data[view.getNameProperty()]
+            if (store.findCaseInsensitive('name', name)) {
+                Ext.Msg.alert(view.getNameContext(), Ext.String.format(view.getAlreadyExistErrorMsg(), name), f => dialog.down('textfield').focus());
             }
             else {
                 store.insert(0, data);
                 store.sync({
                     callback(batch, opt) {
-                        vm.set('selectedItem', store.first());
+                        view.setSelection(store.first());
                         dialog.destroy();
                     }
                 });
             }
         });
     },
-    
+
     refreshButtonClick() {
         var view = this.getView();
         var store = view.getStore();
         store.load();
     },
 
-    onItemDblTap(view, location, options) {
-        this.openItem(location.record);
-    },
-
     openButtonClick() {
-        let vm = this.getViewModel();
-        this.openItem(vm.get('selectedItem'));
+        let record = view.getSelection();
+        this.openItem(record);
     },
 
     openItem(record) {
-        let vm = this.getViewModel();
         this.getView().fireEvent('open', this.getView(), record);
     },
 
     deleteButtonClick() {
 
         let view = this.getView();
+        let record = view.getSelection();
 
-        Ext.Msg.confirm(view.getNameContext(), 'Are you sure?', answer => {
+        Ext.Msg.confirm(view.getNameContext(), Ext.String.format(view.getDeleteConfirmationMsg(), record.get(view.getNameProperty())), answer => {
 
-            if (answer === 'yes') {
-                var view = this.getView();
-                var store = view.getStore();
-                let vm = this.getViewModel();
-                let record = vm.get('selectedItem');
+            if (answer === 'yes') {                
                 store.remove(record);
                 store.sync({
                     callback(batch, opt) {
                         if (store.count() > 0) {
-                            vm.set('selectedItem', store.first());
+                            view.setSelection(store.first());
                         }
                     }
                 });
             }
         });
     },
+
 
 });

@@ -2,6 +2,7 @@ $app-name:  dynamic( 'Ted' );
 $image-search-path: 'C:/dev/test/Ted/Ted.Web/wwwroot/build/development/Ted/modern/resources';
 $theme-name:  dynamic( 'theme-material' );
 $include-ajaxutil: dynamic(true);;
+$include-app: dynamic(true);;
 $include-aux-ajaxutil: dynamic(true);;
 $include-aux-assert: dynamic(true);;
 $include-aux-componentextensions: dynamic(true);;
@@ -759,6 +760,7 @@ $include-ext-viewport-wp: dynamic(true);;
 $include-ext-viewport-windowsphone: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-ted-enum-exceptioncodes: dynamic(true);;
+$include-ted-util-apputil: dynamic(true);;
 $include-ted-view-authentication-authbase: dynamic(true);;
 $include-ted-view-authentication-authcontroller: dynamic(true);;
 $include-ted-view-authentication-authmodel: dynamic(true);;
@@ -783,7 +785,6 @@ $include-ted-view-dialogs-newworkspacedlgmodel: dynamic(true);;
 $include-ted-view-dialogs-teditorwindow: dynamic(true);;
 $include-ted-view-dialogs-teditorwindowcontroller: dynamic(true);;
 $include-ted-view-dialogs-teditorwindowmodel: dynamic(true);;
-$include-ted-view-main-crudviewmodel: dynamic(true);;
 $include-ted-view-main-main: dynamic(true);;
 $include-ted-view-main-maincontroller: dynamic(true);;
 $include-ted-view-main-mainmodel: dynamic(true);;
@@ -1312,6 +1313,14 @@ $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/dialogs/TEditorWindow';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\pages\WorkSpaceList.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/pages/WorkSpaceList';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\main\Main.js */
 $default-resource-root: '' !default;

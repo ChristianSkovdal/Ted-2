@@ -25,6 +25,7 @@ Ext.define('Ted.view.main.MainController', {
     setCurrentView: function (pageHash) {
         let vm = this.getViewModel();
 
+
         let isValidId = n => {
             return !isNaN(parseFloat(n)) && isFinite(n);
         }
@@ -57,6 +58,8 @@ Ext.define('Ted.view.main.MainController', {
             }
 
         }
+
+        debugger;
 
         if (isValidId(pageHash)) {
             this.loadPageMetaData(pageHash, page => {
@@ -91,12 +94,17 @@ Ext.define('Ted.view.main.MainController', {
             }, doLogin);
         }
         else {
-            this.showSystemPage(pageHash);
+            if (pageHash === 'workspacelist' && !App.getUser()) {
+                doLogin();
+            }
+            else {
+                this.showSystemPage(pageHash);
+            }
         }
     },
 
     showWorkspaceList() {
-        this.redirectTo('workspacelist');
+        this.redirectTo('workspacelist', true);
     },
 
     showLogin(pageHash) {

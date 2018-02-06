@@ -13,7 +13,7 @@ Ext.define('Ted.view.dialogs.NewWorkspaceDlgController', {
     //},
 
     onTextFieldFocus(cmp) {
-        let mainVm = Admin.app.getMainView().getViewModel();
+        let mainVm = Ted.app.getMainView().getViewModel();
         let vm = this.getViewModel();
         vm.set('ws', {
             name: 'My new workspace',

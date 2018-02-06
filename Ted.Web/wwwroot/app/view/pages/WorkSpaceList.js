@@ -4,8 +4,8 @@
 
     require: [
         'Ted.view.controls.CrudView',
-        'Ext.SegmentedButton'
-
+        'Ext.SegmentedButton',
+        'Ted.view.dialogs.NewWorkspaceDialog'
     ],
 
     controller: 'workspacelist',
@@ -20,6 +20,15 @@
                     xtype: 'logo',
                     margin: '0 10 0 0'
                 },
+                //{
+                //    xtype: 'cmdbutton',
+                //    iconCls: 'x-fa fa-plus-circle',
+                //    handler: 'testButtonClick',
+                //    bind: {
+                //        text: '{stuff}'
+                //    }
+                //    //text: 'Test'
+                //},
                 {
                     xtype: 'cmdbutton',
                     iconCls: 'x-fa fa-plus-circle',
@@ -32,7 +41,7 @@
                     handler: 'deleteButtonClick',
                     text: 'Remove',
                     bind: {
-                        disabled: '{!selectedItem}',
+                        disabled: '{!workspace}',
                     }
                 },
                 {
@@ -47,7 +56,7 @@
                     handler: 'openButtonClick',
                     text: 'Open',
                     bind: {
-                        disabled: '{!selectedItem}',
+                        disabled: '{!workspace}',
                     },
                 },
                 '->',
@@ -68,15 +77,47 @@
             ]
         },
         {
-            xtype: 'crudview',
-            config: {
 
-                nameContext: 'Workspaces',
+            xtype: 'container',
+            layout: 'hbox',
+            items: [
+                {
+                    xtype: 'crudview',
+                    bind: {
+                        selection: '{workspace}'
+                    },
 
-                alreadyExistErrorMsg: 'A workspace with that name already exist',
+                    itemTpl: '<div class="workspace-item">' +
+                    '<img draggable="false" src="{image}" />' +
+                    '<div class="name">{name}</div>' +
+                    //'<div class="name">{startPageId}</div>' +
+                    '</div>',
 
-                dialogType: 'newworkspacedlg',
-            }
+                    nameContext: 'Workspaces',
+                    alreadyExistErrorMsg: 'A workspace with the name {0} already exist',
+                    dialogType: 'newworkspacedlg',
+                    flex: 2
+                },
+                {
+                    xtype: 'container',
+                    flex: 1,
+                    tpl: Ext.create('Ext.XTemplate', 
+                    '<div class="workspacelist">' +
+                        '<tpl if="!ws">' +
+                            '<div class="empty">Select a workspace to get details</div>' +
+                        '<tpl else>' +
+                            '<div class="header">Name: {[values.ws.getData().name]}</div>' +
+                            '<div>{[values.ws.getData().description]}</div>' +
+                        '</tpl>' +
+                    '</div>'),
+
+                    bind: {
+                        data: {
+                            ws: '{workspace}'
+                        }
+                    }
+                }
+            ]
         }
     ]
 });

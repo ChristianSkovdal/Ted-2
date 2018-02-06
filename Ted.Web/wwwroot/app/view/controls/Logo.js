@@ -3,5 +3,5 @@
     xtype: 'logo',
 
     userCls: 'main-logo',
-    html: 'Ted'
+    html: ''
 });
