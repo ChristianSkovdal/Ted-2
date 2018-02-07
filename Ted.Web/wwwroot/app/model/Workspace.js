@@ -9,6 +9,9 @@ Ext.define('Ted.model.Workspace', {
             name: 'description'
         },
         {
+            name: 'navigation'
+        },
+        {
             name: 'startupCode'
         },
         {
@@ -21,5 +24,9 @@ Ext.define('Ted.model.Workspace', {
             name: 'startPageId',
             type: 'int'
         },
+        //{
+        //    name: 'id',
+        //    type: 'int'
+        //},
     ]
 });

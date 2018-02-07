@@ -11,6 +11,8 @@ namespace Ted
 
         public string description { get; set; }
 
+        public string navigation { get; set; }
+
         public string startupCode { get; set; }
 
         public string shutdownCode { get; set; }

@@ -1,16 +1,13 @@
-/**
- * This class is the controller for the main view for the application. It is specified as
- * the "controller" of the Main view class.
- */
+
 Ext.define('Ted.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
 
-    listen: {
-        controller: {
-            '#': {
-                unmatchedroute: 'setCurrentView'
-            }
+
+    control: {
+        'main': {
+            addPageContentClick: 'onAddPageContent'
+
         }
     },
 
@@ -18,13 +15,9 @@ Ext.define('Ted.view.main.MainController', {
         ':node': 'setCurrentView'
     },
 
-    onUnmatchedRoute: function (token) {
-
-    },
-
     setCurrentView: function (pageHash) {
         let vm = this.getViewModel();
-
+        let me = this;
 
         let isValidId = n => {
             return !isNaN(parseFloat(n)) && isFinite(n);
@@ -46,7 +39,6 @@ Ext.define('Ted.view.main.MainController', {
                         else {
                             this.showWorkspaceList();
                         }
-
                     },
                     () => {
                         this.showLogin(pageHash);
@@ -56,51 +48,50 @@ Ext.define('Ted.view.main.MainController', {
             else {
                 this.showLogin(pageHash);
             }
-
         }
 
-        
+        try {
+            if (isValidId(pageHash)) {
 
-        if (isValidId(pageHash)) {
-            this.loadPageMetaData(pageHash, page => {
+                this.loadPageMetaData(pageHash,
+                    page => {
 
-                if (page.isPublic) {
-
-                    this.loadWorkspaceFromPage(page.id, true, ws => {
-                        this.getViewModel().set('workspace', ws);
-                        this.loadPageContents(page);
-
-                    }, doLogin);
-                }
-                else {
-                    if (this.getViewModel().get('user')) {
-
-                        if (this.getViewModel().get('workspace')) {
-                            this.loadPageContents(page);
+                        var ws = vm.get('workspace');
+                        if (!ws) {
+                            this.loadWorkspace(page.workspaceId, page, this.openWorkspace)
                         }
                         else {
-
-                            this.loadWorkspaceFromPage(page.id, false, ws => {
-                                this.getViewModel().set('workspace', ws);
-                                this.loadPageContents(page);
-
-                            }, doLogin);
+                            this.openWorkspace(ws, page);
                         }
-                    }
-                    else {
-                        doLogin();
-                    }
-                }
-            }, doLogin);
-        }
-        else {
-            if (['login','register'].indexOf(pageHash) < 0 && !App.getUser()) {
-                doLogin();
+                    },
+                    err => {
+                        switch (err.error) {
+                            case ExceptionCodes.PageNotFound:
+                                this.showLogin()
+                                break;
+                            case ExceptionCodes.Authentication:
+                                doLogin();
+                                break;
+                            default:
+                                this.showLogin()
+                        }
+                    });
             }
             else {
-                this.showSystemPage(pageHash);
+                if (['login', 'register'].indexOf(pageHash) < 0 && !App.getUser()) {
+                    doLogin();
+                }
+                else if (pageHash) {
+                    this.showSystemPage(pageHash);
+                }
+                else {
+                    Ext.Msg.alert('Error', 'Missing page hash');
+                }
             }
+        } catch (e) {
+            Ext.Msg.alert('Error', 'Fatal error setting the active view');
         }
+
     },
 
     showWorkspaceList() {
@@ -119,15 +110,9 @@ Ext.define('Ted.view.main.MainController', {
             this.redirectTo('login', true);
         }
 
-
     },
 
-    showSystemPage(xtype, showTools) {
-
-        
-        // Hide tools
-        this.getViewModel().set('showAuthoringTools', showTools);
-
+    showSystemPage(xtype) {
         let tokens = xtype.split('>');
         xtype = tokens[0];
         try {
@@ -138,17 +123,20 @@ Ext.define('Ted.view.main.MainController', {
             if (!item) {
                 item = {
                     xtype: xtype
-                }                
+                }
             }
 
-            item = view.setActiveItem(item);
+            view.setActiveItem(item);
+            item = view.down(xtype);
 
             if (tokens.length > 1) {
                 for (var i = 0; i < length; i++) {
                     let propSet = tokens[i + 1].split('=');
-                    item.getViewModel().set(propSet[0], propSet.length == 1 ? null : propSet[1]);
+                    item.getViewModel().set(propSet[0], propSet.length === 1 ? null : propSet[1]);
                 }
             }
+
+            this.getViewModel().set('showAuthoringTools', item.showTools);
 
         } catch (e) {
             Ext.Msg.alert('Error Loading Page ' + xtype, e.message);
@@ -160,128 +148,106 @@ Ext.define('Ted.view.main.MainController', {
 
     loadPageMetaData(id, callback, errorFn) {
 
-        let SIMULATED_PAGE_FROM_SERVER = {
-            viewType: 'MyPage',
-            id: 123,
-            isPublic: false
-        };
-
-        callback(SIMULATED_PAGE_FROM_SERVER);
+        AjaxUtil.get('api/page/' + App.getToken() + '/' + id,
+            (result) => callback(result.data),
+            (result) => errorFn(result),
+        );
     },
 
-    showPage(pageHash, viewType, presentationMode) {
-
-        let view = this.getView();
-        let item = view.child('component[pageHash=' + pageHash + ']');
-
-        if (!item) {
-            item = {
-                xtype: viewType,
-                pageHash: pageHash
-            };
-        }
+    loadPageContents(page, reset) {
 
         try {
+
+            let view = this.getView();
+            let item = view.child('component[pageHash=' + page.id + ']');
+
+            if (!item || reset) {
+                item = {};
+
+                if (page.json) {
+
+                    Ext.apply(item, JSON.parse(page.json));
+                    item.layout = item.layout || 'vbox';
+                }
+                else {
+                    // default contents
+                    item.layout = {
+                        type: 'vbox',
+                        pack: 'center',
+                        align: 'center'
+                    };
+                    item.items = [
+                        {
+                            cls: 'blank-page-container',
+                            html: '<div class=\'fa-outer-class\'><span class=\'x-fa fa-calendar\'></span></div>' +
+                            '<h1>Lets Get Started!</h1><span class=\'blank-page-text\'>' +
+                            '<a href="javascript:Util.invokeMethod(\'main\', \'addPageContentClick\');">Click here to add some content</a></span>'
+                        }
+                    ];
+                }
+
+                item.xtype = item.xtype || 'container';
+                item.requires = ['Ext.layout.VBox', 'Ext.layout.HBox'];
+                item.pageHash = page.id;
+
+                for (let script in page.scripts) {
+                    item[script.name] = new Function('cmp', script.code);
+                }
+            }
+
             view.setActiveItem(item);
+
+            this.getViewModel().set('showAuthoringTools', App.getUser());
+
         } catch (e) {
-            Ext.Msg.alert('Error Loading Page ' + viewType, e.message);
+            Ext.Msg.alert('Error Loading Page with id ' + page.id, e.message);
             this.redirectTo('login', true);
             return;
         }
 
-
         let navigationTree = this.lookup('navigationTree');
         let store = navigationTree.getStore();
-        let node = store.findNode('pageHash', pageHash);
-
+        let node = store.findNode('id', page.id);
         navigationTree.setSelection(node);
+
     },
 
-    loadPageContents(page) {
+    loadWorkspace(id, page, callback) {
+        let vm = this.getViewModel();
+        let store = vm.getStore('workspaceStore');
+        store.getProxy().setUrl(`/api/workspace/${App.getToken()}/${id}`);
+        store.load({
+            scope: this,
+            callback: function (records, op, success) {
+                if (success) {
+                    vm.set('workspace', records[0]);
+                    callback(records[0], page, this);
+                }
+            }
+        });
+    },
 
-        let SIMULATED_PAGE_FROM_SERVER = {
-            viewType: 'MyPage',
-            id: 123,
-            isPublic: false,
-            code: [
-                'alert("I was Hit!");',
-                'cmp.up("panel").setTitle("Me Too!");',
-            ],
-            json: 'some json here'
-        };
+    openWorkspace(workspace, page, context) {
 
-        //let json = JSON.parse(SIMULATED_PAGE_FROM_SERVER.json);
-        let json = {
-            title: 'My Page',
-            tbar: [
-                {
-                    text: 'Hit Me',
-                    handler: 'MyPage_fn__0'
-                }, {
-                    text: 'Me Too',
-                    handler: 'MyPage_fn__1'
-                },
-            ]
-        };
+        let me = context || this;
+        let vm = me.getViewModel();
+        vm.set('logoText', 'Ted - '+workspace.get('name'));
 
-        for (var i = 0; i < SIMULATED_PAGE_FROM_SERVER.code.length; i++) {
-            let script = SIMULATED_PAGE_FROM_SERVER.code[i];
-            this['MyPage_fn__' + i] = new Function('cmp', script);
+        if (workspace.get('startupCode')) {
+            new Function('main', 'workspace', workspace.get('startupCode'))(me.getView(), null);
         }
 
-        let stdProps = {
-            extend: 'Ext.Panel',
-            xtype: SIMULATED_PAGE_FROM_SERVER.viewType
-        };
-
-        Ext.apply(json, stdProps);
-
-        Ext.define('MyPage', json);
-
-        // showTools = show toolbar and navigationtree
-        this.getViewModel().set('showAuthoringTools', !SIMULATED_PAGE_FROM_SERVER.isPublic);
-
-        page.json = json;
-
-        this.showPage(page.id, page.viewType, false);
-
-    },
-
-    loadWorkspaceFromPage(pageHash, public, callback, errorFn) {
-
-        // public = only load public pages
-
-        let SIMULATED_WORKSPACE_FROM_SERVER = {
-            startUpCode: '',//'alert("Loading!!!");',
-            shutDownCode: '',
-            navigation: '',
-            startPageId: 123
-        };
-
-        new Function('main', 'workspace', SIMULATED_WORKSPACE_FROM_SERVER.startUpCode)(this.getView(), null);
-
-        // Populate NavigationStore from workspace
-        //let navigation = JSON.parse(SIMULATED_WORKSPACE_FROM_SERVER.navigation);
-        let navigation = [
-            {
-                text: 'Dashboard',
-                iconCls: 'x-fa fa-desktop',
-                //rowCls: 'nav-tree-badge nav-tree-badge-new',
-                viewType: 'admindashboard',
-                routeId: 'dashboard', // routeId defaults to viewType
-                leaf: true
-            },
-            {
-                text: 'Health Check Details',
-                iconCls: 'x-fa fa-send',
-                //rowCls: 'nav-tree-badge nav-tree-badge-hot',
-                viewType: 'email',
-                leaf: true,
-                pageHash: '123'
+        let nodes = JSON.parse(workspace.get('navigation'));
+        for (let node of nodes) {
+            if (node.children && node.children.length > 0) {
+                node.expanded = false;
             }
-        ];
+            else {
+                node.leaf = true;                
+            }
+        }
 
-        let navigationTree = this.lookup('navigationTree');
+        let navigationTree = me.lookup('navigationTree');
         let store = Ext.create('Ext.data.TreeStore', {
             storeId: 'NavigationTree',
 
@@ -291,13 +257,16 @@ Ext.define('Ted.view.main.MainController', {
 
             root: {
                 expanded: true,
-                children: navigation
+                children: nodes
             }
         });
         navigationTree.setStore(store);
 
-        callback(SIMULATED_WORKSPACE_FROM_SERVER);
-    }
+        me.loadPageContents(page);
+    },
 
+    onAddPageContent() {
+        this.redirectTo('pagecontentgallery', true);
+    }
 
 });

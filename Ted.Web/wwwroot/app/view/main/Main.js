@@ -11,17 +11,16 @@ Ext.define('Ted.view.main.Main', {
 
     controller: 'main',
     viewModel: 'main',
-
     navigationBar: false,
-
     innerCls: 'main-view',
+    userCls: 'main-container',
 
-    platformConfig: {
-        desktop: {
-        },
-        '!desktop': {
-        },
-    },
+    //platformConfig: {
+    //    desktop: {
+    //    },
+    //    '!desktop': {
+    //    },
+    //},
 
     items: [
         {

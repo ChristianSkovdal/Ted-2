@@ -3,5 +3,8 @@
     xtype: 'logo',
 
     userCls: 'main-logo',
-    html: ''
+    bind: {
+        html: '{logoText}'
+
+    }
 });

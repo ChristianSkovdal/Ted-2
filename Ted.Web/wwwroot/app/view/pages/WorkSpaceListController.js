@@ -45,10 +45,9 @@
         let crud = this.getView().down('crudview');
         crud.showItemView();
 
-        let url = 'api/workspace/' + App.getUser().token;
+        let url = 'api/workspace/' + App.getToken();
         let store = Ext.create('Ext.data.Store', {
             model: 'Ted.model.Workspace',
-            autoSync: true,
             autoLoad: true,
             proxy: {
                 type: 'tedproxy',

@@ -17,12 +17,7 @@ namespace Ted
 
         public bool isPublic { get; set; }
 
-        public virtual ICollection<Page> pages { get; set; } = new List<Page>();
-
         public virtual ICollection<Script> scripts { get; set; } = new List<Script>();
-
-        [NotMapped]
-        public Workspace workspace { get; set; }
-
+        
     }
 }

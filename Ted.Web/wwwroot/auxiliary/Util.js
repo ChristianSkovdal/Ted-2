@@ -3,8 +3,17 @@
 
     alternateClassName: ['Util'],
 
+    invokeMethod(selector, eventName) {
+
+        let view = Ext.ComponentQuery.query(selector);
+        assert(view.length == 1);
+        view[0].fireEvent(eventName);
+
+    },
+
+
     createCmpGuid() {
-        return Util.createGuid('',true);
+        return Util.createGuid('', true);
     },
 
     createGuid(separator, charOnly) {
@@ -16,7 +25,7 @@
 
 
         if (charOnly) {
-            let g='';
+            let g = '';
             const src = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
             for (var i = 0; i < 16; i++) {
                 g += src.substr(Math.random() * 51, 1);
@@ -26,14 +35,14 @@
         else {
             return _p8() + _p8(true) + _p8(true) + _p8();
         }
-        
+
     },
 
     capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     },
 
-    bytesToSize (bytes) {
+    bytesToSize(bytes) {
         var kilobyte = 1024;
         var megabyte = kilobyte * 1024;
         var gigabyte = megabyte * 1024;
@@ -41,7 +50,7 @@
 
         let precision = 0;
         if (bytes > megabyte) {
-            precision=1
+            precision = 1
         }
 
         if ((bytes >= 0) && (bytes < kilobyte)) {

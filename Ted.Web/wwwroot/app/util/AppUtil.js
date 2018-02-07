@@ -7,6 +7,10 @@
         return this.getMainView().getViewModel().get('user');
     },
 
+    getToken() {
+        return this.getUser() ? this.getUser().token : null;
+    },
+
     getMainView() {
         return Ted.getApplication().getMainView();
     },

@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using Microsoft.EntityFrameworkCore;
-
+using Newtonsoft.Json;
 
 namespace Ted
 {
@@ -25,7 +25,21 @@ namespace Ted
             return Json(new
             {
                 success = true,
-                data = _db.Workspaces.Where(r => r.UserId==user.id && !r.deleted)
+                data = _db.Workspaces.Where(r => r.UserId == user.id && !r.deleted)
+            });
+        }
+
+        [HttpGet("{token}/{id}")]
+        public JsonResult GetOne(string token, int id)
+        {
+            var user = _auth.AuthenticateForWorkspace(token, id);
+            if (user == null)
+                throw new TedExeption(ExceptionCodes.Authentication);
+
+            return Json(new
+            {
+                success = true,
+                data = _db.Workspaces.SingleOrDefault(r => r.id == id && !r.deleted)
             });
         }
 
@@ -47,15 +61,16 @@ namespace Ted
                 //json = File.ReadAllText(Path.Combine("templates", "welcome_template.json")),
                 text = "Welcome",
                 iconCls = "x-fa fa-home",
-                isPublic = false
+                isPublic = false,
             };
-
+            
             value.pages.Add(page);
 
             user.myWorkspaces.Add(value);
             _db.Add(value);
             _db.SaveChanges();
 
+            value.navigation = JsonConvert.SerializeObject(new Page[] { page });
             value.startPageId = page.id;
 
             _db.SaveChanges();

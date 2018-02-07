@@ -8,10 +8,6 @@
 	closable: true,
 	defaultFocus: 'textfield',
 
-    listeners: {
-        initialize: 'onInitialize'
-    },
-
 	buttons: {
 		ok: 'onOK',
 		cancel: 'onCancel'

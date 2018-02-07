@@ -11,6 +11,7 @@
         TableNotFound = 104,
         ColumnExist = 105,
         UnableToParseArgument = 106,
-        InvalidArgument = 107
+        InvalidArgument = 107,
+        WorkspaceNotFound = 103,
     }
 }

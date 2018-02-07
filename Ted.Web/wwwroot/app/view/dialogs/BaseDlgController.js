@@ -24,17 +24,11 @@ Ext.define('Ted.view.dialogs.BaseDlgController', {
 
 
     onSpecialKey: function (field, event, options) {
-        if (event.getKey() === event.ENTER) {
-            event.stopEvent();
-            this.onOK();
+        if (field.xtype != 'textareafield') {
+            if (event.getKey() === event.ENTER) {
+                event.stopEvent();
+                this.onOK();
+            }
         }
-    },
-
-    onInitialize() {
-        //this.keyNav = Ext.create('Ext.util.KeyNav', {
-        //    target: this.getView(), 
-        //    enter: this.onOK,
-        //    scope: this
-        //});
     }
 });

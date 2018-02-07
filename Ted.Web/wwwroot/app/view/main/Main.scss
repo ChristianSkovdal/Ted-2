@@ -1,3 +1,4 @@
+$dashboard-item-spacing: dynamic(20px);
 $main-nav-width: dynamic(260px);
 $main-nav-collapsed-width: dynamic(64px);
 $main-toolbar-height: dynamic(65px);
@@ -7,6 +8,10 @@ $logo-image-height: 32px;
 
 .main-view .x-panel-header {
     background-color: #b6ff00 !important;
+}
+
+.main-container {
+    background-color: #f6f6f6;
 }
 
 .main-nav-container, .main-logo {
@@ -83,3 +88,63 @@ $treelist-nav-ui: (
     row-indicator-selected-over-color: lighten($base-color, 7%), 
     row-indicator-over-color: transparent 
 );
+
+.blank-page-container {
+    text-align: center;
+    color: #cacaca;
+
+    .fa-outer-class {
+        margin: auto;
+        background-color: #ebebeb;
+        width: 10rem;
+        border-radius: 5rem;
+
+        .x-fa:before {
+            line-height: 10rem;
+            font-size: 12rem;
+            color: #cacaca;
+        }
+    }
+
+    h1 {
+        margin: .75rem;
+        font-size: 2.5rem;
+    }
+
+    .blank-page-text {
+        font-size: 1.0rem;
+    }
+}
+
+
+.dashboard-item {
+    margin: 0 $dashboard-item-spacing $dashboard-item-spacing 0;
+    float: left;
+    width: calc(100% - #{$dashboard-item-spacing});
+
+    &.last-in-row {
+        margin-right: 0;
+    }
+}
+
+
+
+.small-100 {
+    width: calc(100% - #{$dashboard-item-spacing});
+}
+
+.small-60 {
+    width: calc(60% - #{$dashboard-item-spacing});
+}
+
+.small-50 {
+    width: calc(50% - #{$dashboard-item-spacing});
+}
+
+.small-40 {
+    width: calc(40% - #{$dashboard-item-spacing});
+}
+
+.small-20 {
+    width: calc(20% - #{$dashboard-item-spacing});
+}

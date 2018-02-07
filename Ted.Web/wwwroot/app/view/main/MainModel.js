@@ -8,8 +8,23 @@ Ext.define('Ted.view.main.MainModel', {
     data: {
         workspace: null,
         user: null,
-
         showAuthoringTools: false,
+        logoText: 'Ted'
+    },
+
+    stores: {
+
+        workspaceStore: {
+
+            model: 'Ted.model.Workspace',
+
+            autoLoad: false,
+            autoSync: true,
+
+            proxy: {
+                type: 'tedproxy',
+            }
+        }
 
     }
 

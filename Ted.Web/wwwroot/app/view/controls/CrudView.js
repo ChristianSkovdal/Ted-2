@@ -23,6 +23,10 @@
         this.getActiveItem().setSelection(record);
     },
 
+    //setStore(store) {
+    //    this.getActiveItem().setStore(store);
+    //},
+
      updateItemTpl(tpl) {
         if (this.down('dataview'))
             this.down('dataview').setItemTpl(tpl);
