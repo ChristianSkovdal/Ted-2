@@ -36,7 +36,7 @@ namespace Ted
                 {
                     return Json(new
                     {
-                        error = ExceptionCodes.Authentication,
+                        error = ExceptionCodes.Reauthenticate,
                         success = false 
                     });
                 }
@@ -99,22 +99,26 @@ namespace Ted
         //    });
         //}
 
-        //[HttpPut("{token}/{id}")]
-        //public void UpdateWorkspace(string token, int id, [FromBody]JObject value)
-        //{
-        //    var user = _auth.AuthenticateForWorkspace(token, id);
-        //    if (user == null)
-        //        throw new TedExeption(ExceptionCodes.Authentication);
+        [HttpPut("{token}/{id}")]
+        public void UpdatePage(string token, int id, [FromBody]JObject value)
+        {
+            var page = _db.Pages.SingleOrDefault(r => r.id==id);
+            if (page==null)
+                throw new TedExeption(ExceptionCodes.PageNotFound);
 
-        //    var ws = _db.Workspaces.SingleOrDefault(u => u.id == id);
+            var ws = _db.Workspaces.SingleOrDefault(r => r.id==page.WorkspaceId);
+            var user = _auth.AuthenticateForWorkspace(token, ws.id);
+            if (user == null)
+                throw new TedExeption(ExceptionCodes.Authentication);
 
-        //    Update(ws, value);
+            Update(page, value);
 
-        //    ws.modifiedTime = DateTime.Now;
-        //    ws.modifiedBy = user.id;
+            page.modifiedTime = DateTime.Now;
+            page.modifiedBy = user.id;
 
-        //    _db.SaveChanges();
-        //}
+            _db.SaveChanges();
+            
+        }
 
 
         //[HttpDelete("{token}/{id}")]

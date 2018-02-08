@@ -19,7 +19,8 @@
             title: r.title,
             createNewDataSource: r.createNewDataSource,
             isPublic: r.isPublic,
-            dataSourceName: r.dataSourceName
+            dataSourceName: r.dataSourceName,
+            hosted: true
         };
     },
 

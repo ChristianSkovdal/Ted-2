@@ -3,11 +3,16 @@ Ext.define('Ted.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
 
+    collapsedCls: 'main-nav-collapsed',
 
     control: {
         'main': {
             insertcontent: 'insertContent'
         }
+    },
+
+    config: {
+        showNavigation: true
     },
 
     routes: {
@@ -48,7 +53,6 @@ Ext.define('Ted.view.main.MainController', {
                 this.showLogin(pageHash);
             }
         }
-
         try {
             if (isValidId(pageHash)) {
 
@@ -68,7 +72,7 @@ Ext.define('Ted.view.main.MainController', {
                             case ExceptionCodes.PageNotFound:
                                 this.showLogin()
                                 break;
-                            case ExceptionCodes.Authentication:
+                            case ExceptionCodes.Reauthenticate:
                                 doLogin();
                                 break;
                             default:
@@ -159,15 +163,15 @@ Ext.define('Ted.view.main.MainController', {
         let proxy = store.getProxy();
         proxy.setUrl(url);
         proxy.errorHandler = errObj => {
-            if (errObj.error != 100)
+            if (errObj.error != ExceptionCodes.Reauthenticate) {
                 return Ted.proxy.TedRestProxy.prototype.errorHandler.call(this, errObj);
+            }
         };
 
-        
         store.load({
             scope: this,
             callback: function (records, op, success) {
-                
+
                 if (success) {
                     callback(records[0])
                 }
@@ -190,10 +194,17 @@ Ext.define('Ted.view.main.MainController', {
                 item = {};
 
                 if (page.get('json')) {
-                    
+
 
                     Ext.apply(item, JSON.parse(page.get('json')));
-                    //item.layout = item.layout || 'vbox';
+
+                    if (item.hosted) {
+                        item = {
+                            xtype: 'container',
+                            layout: 'fit',
+                            items: [item]
+                        }
+                    }
                 }
                 else {
                     // default contents
@@ -211,8 +222,12 @@ Ext.define('Ted.view.main.MainController', {
                                     <h1>Lets Get Started!</h1>
                                     <span class=\'blank-page-text\'>
                                         <a href="javascript:Util.invokeControllerMethod(\'main\', \'addPageContentClicked\');">
-                                            Click here to add some content
-                                        </a>
+                                            Click here to add some content to this page
+                                        </a><p>
+                                        - or -</p>
+                                        <a href="javascript:Util.invokeControllerMethod(\'main\', \'addNewPageClicked\');">
+                                            Click here to add another page
+                                        </a><
                                     </span>`
                         }
                     ];
@@ -304,7 +319,10 @@ Ext.define('Ted.view.main.MainController', {
     addPageContentClicked() {
         this.showSystemPage('pagecontentpicker');
     },
-    
+
+    addNewPageClicked() {
+    },
+
     insertContent(xtype, cfg) {
 
         let page = this.getView().getActiveItem().pageRecord;
@@ -313,10 +331,73 @@ Ext.define('Ted.view.main.MainController', {
         cfg = cfg || {};
         cfg.xtype = xtype;
 
-        
+        debugger;
         page.set('json', JSON.stringify(cfg));
 
         this.addPageContents(page, true);
 
-    }
+    },
+
+    onToggleNavigationSize() {
+        this.setShowNavigation(!this.getShowNavigation());
+    },
+
+    updateShowNavigation: function (showNavigation, oldValue) {
+
+
+        debugger;
+        let navigationTree = this.lookupReference('navigationTree');
+        if (navigationTree) {
+
+            //navigationTree.setExpanderFirst(!hasNav);
+            navigationTree.setMicro(!showNavigation);
+            //navigationTree.setUi(hasNav ? 'nav' : null);
+
+            navigationTree.setWidth(showNavigation ? this.measureWidth(navigationTree) : null);
+
+        }
+
+
+    //    //// Ignore the first update since our initial state is managed specially. This
+    //    //// logic depends on view state that must be fully setup before we can toggle
+    //    //// things.
+    //    ////
+
+    //    //debugger;
+    //    //if (oldValue !== undefined) {
+    //    //    var me = this,
+    //    //        cls = me.collapsedCls,
+    //    //        logo = me.lookup('logo'),
+    //    //        navigation = me.lookup('navigation'),
+    //    //        navigationTree = me.lookup('navigationTree'),
+    //    //        rootEl = navigationTree.rootItem.el;
+
+    //    //    //navigation.toggleCls(cls);
+    //    //    logo.toggleCls(cls);
+
+    //    //    if (showNavigation) {
+    //    //        // Restore the text and other decorations before we expand so that they
+    //    //        // will be revealed properly. The forced width is still in force from
+    //    //        // the collapse so the items won't wrap.
+    //    //        navigationTree.setMicro(false);
+    //    //    } else {
+    //    //        // Ensure the right-side decorations (they get munged by the animation)
+    //    //        // get clipped by propping up the width of the tree's root item while we
+    //    //        // are collapsed.
+    //    //        rootEl.setWidth(rootEl.getWidth());
+    //    //    }
+
+    //    //    logo.element.on({
+    //    //        single: true,
+    //    //        transitionend: function () {
+    //    //            if (showNavigation) {
+    //    //                // after expanding, we should remove the forced width
+    //    //                rootEl.setWidth('');
+    //    //            } else {
+    //    //                navigationTree.setMicro(true);
+    //    //            }
+    //    //        }
+    //    //    });
+    //    //}
+    },
 });

@@ -28,13 +28,14 @@ Ext.define('Ted.view.main.MainModel', {
 
         pageStore: {
 
-            fields: [''],
+            //fields: [''],
 
             autoLoad: false,
             autoSync: true,
 
             proxy: {
                 type: 'tedproxy',
+                appendId: false
             }
         }
 

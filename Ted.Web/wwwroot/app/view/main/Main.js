@@ -30,8 +30,16 @@ Ext.define('Ted.view.main.Main', {
             },
             items: [
                 {
-                    xtype:'logo'
-                }
+                    xtype: 'logo',
+                    reference: 'logo'
+                },
+                {
+                    ui: 'header',
+                    iconCls: 'x-fa fa-bars',
+                    margin: '0 0 0 10',
+                    handler: 'onToggleNavigationSize'
+                },
+                '->',
             ]
         },
         {

@@ -20,15 +20,6 @@
                     xtype: 'logo',
                     margin: '0 10 0 0'
                 },
-                //{
-                //    xtype: 'cmdbutton',
-                //    iconCls: 'x-fa fa-plus-circle',
-                //    handler: 'testButtonClick',
-                //    bind: {
-                //        text: '{stuff}'
-                //    }
-                //    //text: 'Test'
-                //},
                 {
                     xtype: 'cmdbutton',
                     iconCls: 'x-fa fa-plus-circle',

@@ -20,6 +20,12 @@ $logo-image-height: 32px;
     width: $main-nav-width;
 }
 
+
+.main-nav-collapsed {
+    width: $main-nav-collapsed-width;
+}
+
+
 .main-toolbar {
     z-index: 1;
 
