@@ -10,8 +10,12 @@
             }
         },
         'crudview>container': {
+
             painted: function (cmp) {
                 cmp.setStore(this.getView().getStore());
+                if (!cmp.getSelection() && cmp.getStore().count()>0) {
+                    cmp.setSelection(cmp.getStore().first());
+                }
             },
             childdoubletap: function (view, location, options) {
                 this.openItem(location.record);
@@ -25,7 +29,7 @@
         },
         //'crudview>grid': {
         //    painted: function (cmp) {
-        //        debugger;
+        //        
         //        cmp.setStore(this.getView().getStore());
         //    }
         //}

@@ -5,6 +5,9 @@ Ext.define('Ted.proxy.TedRestProxy', {
     appendId: true,
 
     errorHandler(errObj) {
+        if (!errObj) {
+            return 'No error information available';
+        }
         msg = errObj.message;
         return msg || JSON.stringify(errObj);
     },
@@ -20,6 +23,7 @@ Ext.define('Ted.proxy.TedRestProxy', {
     },
     listeners: {
         exception: function (proxy, response, operation) {
+            
             let msg = 'Unknown Error';
             if (response && response.responseText) {
                 var errObj = JSON.parse(response.responseText);

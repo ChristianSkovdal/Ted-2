@@ -3,11 +3,11 @@
 
     alternateClassName: ['Util'],
 
-    invokeMethod(selector, eventName) {
+    invokeControllerMethod(selector, methodName) {
 
         let view = Ext.ComponentQuery.query(selector);
         assert(view.length == 1);
-        view[0].fireEvent(eventName);
+        view[0].getController()[methodName]();
 
     },
 

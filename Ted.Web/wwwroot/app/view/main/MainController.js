@@ -6,8 +6,7 @@ Ext.define('Ted.view.main.MainController', {
 
     control: {
         'main': {
-            addPageContentClick: 'onAddPageContent'
-
+            insertcontent: 'insertContent'
         }
     },
 
@@ -53,12 +52,12 @@ Ext.define('Ted.view.main.MainController', {
         try {
             if (isValidId(pageHash)) {
 
-                this.loadPageMetaData(pageHash,
+                this.loadPage(pageHash,
                     page => {
 
                         var ws = vm.get('workspace');
                         if (!ws) {
-                            this.loadWorkspace(page.workspaceId, page, this.openWorkspace)
+                            this.loadWorkspace(page.get('workspaceId'), page, this.openWorkspace)
                         }
                         else {
                             this.openWorkspace(ws, page);
@@ -146,28 +145,55 @@ Ext.define('Ted.view.main.MainController', {
 
     },
 
-    loadPageMetaData(id, callback, errorFn) {
+    loadPage(id, callback, errorFn) {
 
-        AjaxUtil.get('api/page/' + App.getToken() + '/' + id,
-            (result) => callback(result.data),
-            (result) => errorFn(result),
-        );
+        //AjaxUtil.get('api/page/' + App.getToken() + '/' + id,
+        //    (result) => callback(result.data),
+        //    (result) => errorFn(result),
+        //);
+
+        let vm = this.getViewModel();
+        let store = vm.getStore('pageStore');
+        let url = `/api/page/${App.getToken()}/${id}`;
+
+        let proxy = store.getProxy();
+        proxy.setUrl(url);
+        proxy.errorHandler = errObj => {
+            if (errObj.error != 100)
+                return Ted.proxy.TedRestProxy.prototype.errorHandler.call(this, errObj);
+        };
+
+        
+        store.load({
+            scope: this,
+            callback: function (records, op, success) {
+                
+                if (success) {
+                    callback(records[0])
+                }
+                else {
+                    let result = JSON.parse(op.getResponse().responseText);
+                    errorFn(result)
+                }
+            }
+        });
     },
 
-    loadPageContents(page, reset) {
+    addPageContents(page, reset) {
 
         try {
 
             let view = this.getView();
-            let item = view.child('component[pageHash=' + page.id + ']');
+            let item = view.child('component[pageHash=' + page.getId() + ']');
 
             if (!item || reset) {
                 item = {};
 
-                if (page.json) {
+                if (page.get('json')) {
+                    
 
-                    Ext.apply(item, JSON.parse(page.json));
-                    item.layout = item.layout || 'vbox';
+                    Ext.apply(item, JSON.parse(page.get('json')));
+                    //item.layout = item.layout || 'vbox';
                 }
                 else {
                     // default contents
@@ -179,18 +205,25 @@ Ext.define('Ted.view.main.MainController', {
                     item.items = [
                         {
                             cls: 'blank-page-container',
-                            html: '<div class=\'fa-outer-class\'><span class=\'x-fa fa-calendar\'></span></div>' +
-                            '<h1>Lets Get Started!</h1><span class=\'blank-page-text\'>' +
-                            '<a href="javascript:Util.invokeMethod(\'main\', \'addPageContentClick\');">Click here to add some content</a></span>'
+                            html: ` <div class=\'fa-outer-class\'>
+                                        <!--<span class=\'x-fa fa-calendar\'></span>-->
+                                    </div>
+                                    <h1>Lets Get Started!</h1>
+                                    <span class=\'blank-page-text\'>
+                                        <a href="javascript:Util.invokeControllerMethod(\'main\', \'addPageContentClicked\');">
+                                            Click here to add some content
+                                        </a>
+                                    </span>`
                         }
                     ];
                 }
 
-                item.xtype = item.xtype || 'container';
-                item.requires = ['Ext.layout.VBox', 'Ext.layout.HBox'];
-                item.pageHash = page.id;
+                //item.xtype = item.xtype || 'container';
+                //item.requires = ['Ext.layout.VBox', 'Ext.layout.HBox'];
+                item.pageHash = page.getId();
+                item.pageRecord = page;
 
-                for (let script in page.scripts) {
+                for (let script in page.get('scripts')) {
                     item[script.name] = new Function('cmp', script.code);
                 }
             }
@@ -200,14 +233,14 @@ Ext.define('Ted.view.main.MainController', {
             this.getViewModel().set('showAuthoringTools', App.getUser());
 
         } catch (e) {
-            Ext.Msg.alert('Error Loading Page with id ' + page.id, e.message);
+            Ext.Msg.alert('Error Loading Page with id ' + page.getId(), e.message);
             this.redirectTo('login', true);
             return;
         }
 
         let navigationTree = this.lookup('navigationTree');
         let store = navigationTree.getStore();
-        let node = store.findNode('id', page.id);
+        let node = store.findNode('id', page.getId());
         navigationTree.setSelection(node);
 
     },
@@ -223,6 +256,9 @@ Ext.define('Ted.view.main.MainController', {
                     vm.set('workspace', records[0]);
                     callback(records[0], page, this);
                 }
+                else {
+                    this.redirectTo('login');
+                }
             }
         });
     },
@@ -231,7 +267,7 @@ Ext.define('Ted.view.main.MainController', {
 
         let me = context || this;
         let vm = me.getViewModel();
-        vm.set('logoText', 'Ted - '+workspace.get('name'));
+        //vm.set('logoText', 'Ted - ' + workspace.get('name'));
 
         if (workspace.get('startupCode')) {
             new Function('main', 'workspace', workspace.get('startupCode'))(me.getView(), null);
@@ -243,7 +279,7 @@ Ext.define('Ted.view.main.MainController', {
                 node.expanded = false;
             }
             else {
-                node.leaf = true;                
+                node.leaf = true;
             }
         }
 
@@ -262,11 +298,25 @@ Ext.define('Ted.view.main.MainController', {
         });
         navigationTree.setStore(store);
 
-        me.loadPageContents(page);
+        me.addPageContents(page);
     },
 
-    onAddPageContent() {
-        this.redirectTo('pagecontentgallery', true);
-    }
+    addPageContentClicked() {
+        this.showSystemPage('pagecontentpicker');
+    },
+    
+    insertContent(xtype, cfg) {
 
+        let page = this.getView().getActiveItem().pageRecord;
+        assert(page);
+
+        cfg = cfg || {};
+        cfg.xtype = xtype;
+
+        
+        page.set('json', JSON.stringify(cfg));
+
+        this.addPageContents(page, true);
+
+    }
 });

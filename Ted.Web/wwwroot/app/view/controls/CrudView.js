@@ -23,6 +23,11 @@
         this.getActiveItem().setSelection(record);
     },
 
+    //getSelection() {
+    //    
+    //    this.getActiveItem().getSelection();
+    //},
+
     //setStore(store) {
     //    this.getActiveItem().setStore(store);
     //},
