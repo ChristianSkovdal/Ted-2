@@ -345,7 +345,7 @@ Ext.define('Ted.view.main.MainController', {
     updateShowNavigation: function (showNavigation, oldValue) {
 
 
-        debugger;
+        //debugger;
         let navigationTree = this.lookupReference('navigationTree');
         if (navigationTree) {
 

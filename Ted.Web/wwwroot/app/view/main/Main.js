@@ -62,7 +62,15 @@ Ext.define('Ted.view.main.Main', {
                 hidden: '{!showAuthoringTools}'
             }
 
-        }
+        },
+        {
+            xtype: 'container',
+            docked: 'left',
+            width: 50,
+            //height: 60,
+            style: 'background:lightgray;',
+            html: 'Dims'
+        },
         //{
         //    xtype: 'container',
         //    docked: 'left',
