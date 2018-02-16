@@ -4,7 +4,8 @@
 
     controller: 'basedlg',
 
-	width: 400,
+    width: 400,
+    center:true,
 	closable: true,
 	defaultFocus: 'textfield',
 

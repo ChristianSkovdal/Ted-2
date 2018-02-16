@@ -37,16 +37,27 @@
             this.down('dataview').setItemTpl(tpl);
     },
 
-    items: [
-        {
-            xtype: 'grid',
-            columns: [
-                {
-                    text: 'Name',
-                    dataIndex: 'name'
-                }
-            ],
-        },
+     items: [
+         {
+             xtype: 'emptypage',
+             html: ` <div class=\'fa-outer-class\'>
+                         <!--<span class=\'x-fa fa-calendar\'></span>-->
+                     </div>
+                     <span class=\'blank-page-text\'>
+                         <a href="javascript:Util.invokeControllerMethod(\'flexview\', \'addColumn\');">
+                             Click here to add a field
+                         </a>
+                     </span>`
+         },                     
+         {
+             xtype: 'grid',
+             //columns: [
+             //    {
+             //        text: 'Name',
+             //        dataIndex: 'name'
+             //    }
+             //],
+         },
         {
             xtype: 'dataview',
             inline: true,
@@ -62,6 +73,19 @@
 
     showItemView() {
         this.setActiveItem(this.down('dataview'));
+    },
+
+    getFields() {
+        //return this.down('grid').getColumns()
+        //    .filter(r => r.getDataIndex() !== 'id')
+        //    .map(r => {
+
+        //        return {
+        //            type: r.dataType || r._dataType,
+        //            name: r._dataIndex
+        //        };
+        //    });
+
     },
 
 });

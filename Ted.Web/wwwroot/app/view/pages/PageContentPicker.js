@@ -70,12 +70,12 @@
                     xtype: 'itemgallery',
                     contentData: [
                         {
-                            name: 'Grid',
+                            name: 'Data View',
                             description: 'Massa ac sit vel ultrices, tellus lacinia commodo quis, excepteur nonummy facilisi netus risus netus, suspendisse etiam donec arcu fermentum, proin sit amet vitae egestas mi laoreet.',
                             icon: 'grid-icon.png',
                             picture: 'grid-img.png',
-                            configUi: 'grid-config',
-                            xtype: 'tgrid'
+                            configUi: 'flexview-config',
+                            xtype: 'flexview'
                         },
                         //{
                         //    name: 'Linked Grid',

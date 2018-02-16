@@ -3,6 +3,9 @@
     xtype: 'newworkspacedlg',
 
     title: 'New Workspace',
+    width: 400,
+    closable: true,
+    defaultFocus: 'textfield',
 
     viewModel: {
         ws: {}
@@ -16,9 +19,10 @@
         });
     },
 
-    width: 400,
-    closable: true,
-    defaultFocus: 'textfield',
+    getData() {
+        return this.getViewModel().get('ws');
+    },
+
     items: [
         {
             xtype: 'textfield',

@@ -15,7 +15,7 @@ Ext.define('Ted.view.dialogs.BaseDlgController', {
 
     onOK() {
 		let vm = this.getViewModel();
-        this.getView().fireEvent('ok', this.getView(), vm.data);
+        this.getView().fireEvent('ok', this.getView(), this.getView().getData ? this.getView().getData() : vm.data);
 	},
 
 	onCancel() {

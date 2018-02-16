@@ -331,7 +331,6 @@ Ext.define('Ted.view.main.MainController', {
         cfg = cfg || {};
         cfg.xtype = xtype;
 
-        debugger;
         page.set('json', JSON.stringify(cfg));
 
         this.addPageContents(page, true);

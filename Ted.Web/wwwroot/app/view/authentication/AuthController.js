@@ -16,7 +16,7 @@ Ext.define('Ted.view.authentication.AuthController', {
             (result) => {
 
                 let vm = this.getViewModel();
-				vm.set('user', result.data);
+                vm.set('user', result.data);
 
                 let redir = vm.get('redirectTo', true);
                 if (redir) {
@@ -25,7 +25,7 @@ Ext.define('Ted.view.authentication.AuthController', {
                 else {
                     this.redirectTo('workspacelist', true);
                 }
-                    
+
 
                 if (vm.get('rememberMe')) {
                     // Persist passwords
@@ -39,7 +39,7 @@ Ext.define('Ted.view.authentication.AuthController', {
     registerUser() {
 
         let vm = this.getViewModel();
-		let me = this;
+        let me = this;
         AjaxUtil.post('api/user',
             {
                 email: vm.get('email'),
@@ -54,8 +54,26 @@ Ext.define('Ted.view.authentication.AuthController', {
     },
 
     goToRegister() {
+
+
+        //Ext.create('Ext.Dialog', {
+
+        //    title: 'Test',
+        //    heigth: 400,
+        //    width: 400,
+        //    defaultFocus: 'textfield',
+
+        //    items: [
+
+        //        {
+        //            xtype: 'textfield',
+        //            label: 'Test'
+        //        }]
+        //}).show();
+
+
         this.redirectTo('register', true);
     },
 
-    
+
 });

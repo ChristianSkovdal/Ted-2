@@ -69,6 +69,9 @@ Ext.define('Ted.view.main.Main', {
         userCls: 'main-nav-container',
         reference: 'navigation',
         layout: 'fit',
+           bind: {
+                hidden: '{!showAuthoringTools}'
+            },
         items: [{
             xtype: 'treelist',
             reference: 'navigationTree',

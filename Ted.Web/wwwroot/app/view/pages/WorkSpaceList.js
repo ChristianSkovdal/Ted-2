@@ -50,21 +50,21 @@
                         disabled: '{!workspace}',
                     },
                 },
-                '->',
-                {
-                    xtype: 'segmentedbutton',
-                    margin: '0 16 0 0',
-                    items: [{
-                        value: 'item',
-                        iconCls: 'x-fa fa-desktop',
-                        handler: 'onSwitchToView'
-                    }, {
-                        value: 'grid',
-                        iconCls: 'x-fa fa-tablet',
-                        pressed: true,
-                        handler: 'onSwitchToView'
-                    }]
-                }
+                //'->',
+                //{
+                //    xtype: 'segmentedbutton',
+                //    margin: '0 16 0 0',
+                //    items: [{
+                //        value: 'item',
+                //        iconCls: 'x-fa fa-desktop',
+                //        handler: 'onSwitchToView'
+                //    }, {
+                //        value: 'grid',
+                //        iconCls: 'x-fa fa-tablet',
+                //        pressed: true,
+                //        handler: 'onSwitchToView'
+                //    }]
+                //}
             ]
         },
         {

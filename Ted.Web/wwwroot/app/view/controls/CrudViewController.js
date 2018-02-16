@@ -42,21 +42,15 @@
 
         let view = this.getView();
 
-        var dialog = Ext.create({
-            xtype: view.getDialogType()
-        });
-
-        dialog.show();
-
-        dialog.on('ok', (cmp, data) => {
+        let addData = (cmp, data) => {
 
             let store = view.getStore();
-            let name = data.ws[view.getNameProperty()]
+            let name = data[view.getNameProperty()]
             if (store.findCaseInsensitive(view.getNameProperty(), name)) {
                 Ext.Msg.alert(view.getNameContext(), Ext.String.format(view.getAlreadyExistErrorMsg(), name), f => dialog.down('textfield').focus());
             }
             else {
-                store.insert(0, data.ws);
+                store.insert(0, data);
                 store.sync({
                     callback(batch, opt) {
                         view.setSelection(store.first());
@@ -64,7 +58,22 @@
                     }
                 });
             }
-        });
+        };
+        debugger;
+        let dlgtype = view.getDialogType();
+        if (dlgtype) {
+            var dialog = Ext.create({
+                xtype: dlgtype
+            });
+            dialog.show();
+            dialog.on('ok', addData);
+        }
+        else {
+            addData(null,null);
+        }
+
+
+       
     },
 
     refreshButtonClick() {
