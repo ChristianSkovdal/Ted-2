@@ -344,60 +344,40 @@ Ext.define('Ted.view.main.MainController', {
 
     updateShowNavigation: function (showNavigation, oldValue) {
 
+        if (oldValue !== undefined) {
+            var me = this,
+                cls = me.collapsedCls,
+                logo = me.lookup('logo'),
+                navigation = me.lookup('navigation'),
+                navigationTree = me.lookup('navigationTree'),
+                rootEl = navigationTree.rootItem.el;
 
-        //debugger;
-        let navigationTree = this.lookupReference('navigationTree');
-        if (navigationTree) {
+            navigation.toggleCls(cls);
+            logo.toggleCls(cls);
 
-            //navigationTree.setExpanderFirst(!hasNav);
-            navigationTree.setMicro(!showNavigation);
-            //navigationTree.setUi(hasNav ? 'nav' : null);
+            if (showNavigation) {
+                // Restore the text and other decorations before we expand so that they
+                // will be revealed properly. The forced width is still in force from
+                // the collapse so the items won't wrap.
+                navigationTree.setMicro(false);
+            } else {
+                // Ensure the right-side decorations (they get munged by the animation)
+                // get clipped by propping up the width of the tree's root item while we
+                // are collapsed.
+                rootEl.setWidth(rootEl.getWidth());
+            }
 
-            navigationTree.setWidth(showNavigation ? this.measureWidth(navigationTree) : null);
-
+            logo.element.on({
+                single: true,
+                transitionend: function () {
+                    if (showNavigation) {
+                        // after expanding, we should remove the forced width
+                        rootEl.setWidth('');
+                    } else {
+                        navigationTree.setMicro(true);
+                    }
+                }
+            });
         }
-
-
-    //    //// Ignore the first update since our initial state is managed specially. This
-    //    //// logic depends on view state that must be fully setup before we can toggle
-    //    //// things.
-    //    ////
-
-    //    //debugger;
-    //    //if (oldValue !== undefined) {
-    //    //    var me = this,
-    //    //        cls = me.collapsedCls,
-    //    //        logo = me.lookup('logo'),
-    //    //        navigation = me.lookup('navigation'),
-    //    //        navigationTree = me.lookup('navigationTree'),
-    //    //        rootEl = navigationTree.rootItem.el;
-
-    //    //    //navigation.toggleCls(cls);
-    //    //    logo.toggleCls(cls);
-
-    //    //    if (showNavigation) {
-    //    //        // Restore the text and other decorations before we expand so that they
-    //    //        // will be revealed properly. The forced width is still in force from
-    //    //        // the collapse so the items won't wrap.
-    //    //        navigationTree.setMicro(false);
-    //    //    } else {
-    //    //        // Ensure the right-side decorations (they get munged by the animation)
-    //    //        // get clipped by propping up the width of the tree's root item while we
-    //    //        // are collapsed.
-    //    //        rootEl.setWidth(rootEl.getWidth());
-    //    //    }
-
-    //    //    logo.element.on({
-    //    //        single: true,
-    //    //        transitionend: function () {
-    //    //            if (showNavigation) {
-    //    //                // after expanding, we should remove the forced width
-    //    //                rootEl.setWidth('');
-    //    //            } else {
-    //    //                navigationTree.setMicro(true);
-    //    //            }
-    //    //        }
-    //    //    });
-    //    //}
     },
 });

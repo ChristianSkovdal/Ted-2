@@ -4979,46 +4979,120 @@ body {
 .dark-mode .workspace-item.x-focused {
     background-color: #232323;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:9 */
-.main-view .x-panel-header {
-    background-color: #b6ff00 !important;
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:58 */
+.x-big .x-button-header .x-icon-el {
+    /*@include button-ui( $ui: 'bright-blue', $color: #fff, $icon-color: #fff, $background-color: #03a9f5, $border-width: 0 );
+
+@include button-ui( $ui: 'round', $border-radius: 50%, $border-radius-big: 50% );
+
+@include button-ui( $ui: 'header', $color: #999, $icon-color: #999, $background-color: transparent, $border-width: 0 );
+
+@include button-ui( $ui: 'blue', $color: #fff, $icon-color: #fff, $background-color: #167abc, $border-width: 0 );
+
+@include button-ui( $ui: 'facebook', $color: #fff, $icon-color: #fff, $background-color: $social-facebook-btn-background, $border-color: darken($social-facebook-btn-background, 5%) );
+
+@include button-ui( $ui: 'gray-button', $color: #fff, $icon-color: #fff, $background-color: #a7a7a7, $border-width: 0 );
+
+@include button-ui( $ui: 'soft-blue', $color: #fff, $icon-color: #fff, $background-color: $color-soft-blue, $border-color: darken($color-soft-blue, 5%) );
+
+@include button-ui( $ui: 'soft-cyan', $color: #fff, $icon-color: #fff, $background-color: $color-soft-cyan, $border-color: darken($color-soft-cyan, 5%) );
+
+@include button-ui( $ui: 'soft-green', $color: #fff, $icon-color: #fff, $pressed-color: #fff, $background-color: $color-soft-green, $border-color: darken($color-soft-green, 5%) );
+
+@include button-ui( $ui: 'soft-purple', $color: #fff, $icon-color: #fff, $background-color: $color-soft-purple, $border-color: darken($color-soft-purple, 5%) );
+
+@include button-ui( $ui: 'soft-red', $color: #fff, $icon-color: #fff, $background-color: $color-soft-red, $border-color: darken($color-soft-red, 5%) );*/
+    font-size: 18px;
+    font-weight: normal;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:13 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:65 */
+a {
+    color: #35baf6;
+    text-decoration: none;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:70 */
 .main-container {
     background-color: #f6f6f6;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:17 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:74 */
+.x-treelist-nav {
+    transition: width 0.3s;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:78 */
 .main-nav-container,
 .main-logo {
     position: relative;
     transition: width 0.3s;
     width: 260px;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:24 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:84 */
 .main-nav-collapsed {
     width: 64px;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:29 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:88 */
 .main-toolbar {
     z-index: 1;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:32 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:91 */
 .main-toolbar > .x-body-el {
     padding: 0;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:37 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:96 */
 .main-logo,
 .main-toolbar {
     height: 65px;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:41 */
-.main-nav-container,
-.main-logo {
-    position: relative;
-    transition: width 0.3s;
-    width: 260px;
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:99 */
+.phone .main-logo,
+.phone .main-toolbar {
+    height: 56px;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:47 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:104 */
+.x-big .main-toolbar,
+.main-toolbar {
+    border: none;
+    padding: 0 38px 0 0;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:109 */
+.main-nav-floated {
+    background-color: #32404e;
+    transition: left 0.3s;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:118 */
+.main-nav-slid-out {
+    left: -260px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:126 */
+.small-image {
+    width: 35px;
+    height: 35px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:132 */
+.phone .main-toolbar {
+    padding-right: 16px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:136 */
+.phone .main-user-name {
+    display: none;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:140 */
+.phone .main-logo {
+    line-height: 56px;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:143 */
+.phone .main-logo:before {
+    top: 15px;
+    background-size: 85%;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:151 */
+.main-nav-mask > .x-mask-inner {
+    display: none;
+}
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:155 */
 .main-logo {
     background-color: #4487c1;
     background-color: var(--base-color);
@@ -5029,71 +5103,14 @@ body {
     padding-left: 64px;
     position: relative;
 }
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:56 */
+/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:164 */
 .main-logo:before {
     content: " ";
     position: absolute;
     background-size: cover;
-    top: 16.5px;
+    top: 19.5px;
     left: 22px;
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 26px;
     background: transparent url(/images/ws.png) no-repeat center center;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:98 */
-.blank-page-container {
-    text-align: center;
-    color: #cacaca;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:102 */
-.blank-page-container .fa-outer-class {
-    margin: auto;
-    background-color: #ebebeb;
-    width: 10rem;
-    border-radius: 5rem;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:108 */
-.blank-page-container .fa-outer-class .x-fa:before {
-    line-height: 10rem;
-    font-size: 12rem;
-    color: #cacaca;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:115 */
-.blank-page-container h1 {
-    margin: 0.75rem;
-    font-size: 2.5rem;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:120 */
-.blank-page-container .blank-page-text {
-    font-size: 1rem;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:126 */
-.dashboard-item {
-    margin: 0 20px 20px 0;
-    float: left;
-    width: calc(100% - 20px);
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:131 */
-.dashboard-item.last-in-row {
-    margin-right: 0;
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:138 */
-.small-100 {
-    width: calc(100% - 20px);
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:142 */
-.small-60 {
-    width: calc(60% - 20px);
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:146 */
-.small-50 {
-    width: calc(50% - 20px);
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:150 */
-.small-40 {
-    width: calc(40% - 20px);
-}
-/* C:/dev/test/Ted/Ted.Web/wwwroot/app/view/main/Main.scss:154 */
-.small-20 {
-    width: calc(20% - 20px);
 }

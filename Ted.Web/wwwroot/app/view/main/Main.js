@@ -42,7 +42,34 @@ Ext.define('Ted.view.main.Main', {
                 '->',
             ]
         },
-        {
+        //{
+        //    xtype: 'treelist',
+        //    reference: 'navigationTree',
+        //    scrollable: true,
+        //    ui: 'nav',
+        //    store: 'NavigationTree',
+        //    expanderFirst: false,
+        //    expanderOnly: false,
+        //    docked: 'left',
+        //    userCls: 'main-nav-container',
+        //    reference: 'navigationTree',
+        //    layout: 'fit',
+        //    listeners: {
+        //        //itemclick: 'onNavigationItemClick',
+        //        //selectionchange: 'onNavigationTreeSelectionChange'
+        //    },
+        //    bind: {
+        //        hidden: '{!showAuthoringTools}'
+        //    }
+
+        //},
+       {
+        xtype: 'container',
+        docked: 'left',
+        userCls: 'main-nav-container',
+        reference: 'navigation',
+        layout: 'fit',
+        items: [{
             xtype: 'treelist',
             reference: 'navigationTree',
             scrollable: true,
@@ -50,49 +77,12 @@ Ext.define('Ted.view.main.Main', {
             store: 'NavigationTree',
             expanderFirst: false,
             expanderOnly: false,
-            docked: 'left',
-            userCls: 'main-nav-container',
-            reference: 'navigationTree',
-            layout: 'fit',
             listeners: {
                 //itemclick: 'onNavigationItemClick',
                 //selectionchange: 'onNavigationTreeSelectionChange'
-            },
-            bind: {
-                hidden: '{!showAuthoringTools}'
             }
-
-        },
-        {
-            xtype: 'container',
-            docked: 'left',
-            width: 50,
-            //height: 60,
-            style: 'background:lightgray;',
-            html: 'Dims'
-        },
-        //{
-        //    xtype: 'container',
-        //    docked: 'left',
-        //    userCls: 'main-nav-container',
-        //    reference: 'navigation',
-        //    layout: 'fit',
-        //    items: [
-        //        {
-        //            xtype: 'treelist',
-        //            reference: 'navigationTree',
-        //            scrollable: true,
-        //            ui: 'nav',
-        //            store: 'NavigationTree',
-        //            expanderFirst: false,
-        //            expanderOnly: false,
-        //            listeners: {
-        //                //itemclick: 'onNavigationItemClick',
-        //                //selectionchange: 'onNavigationTreeSelectionChange'
-        //            }
-        //        }
-        //    ]
-        //}
+        }]
+    }
     ]
 
 });
