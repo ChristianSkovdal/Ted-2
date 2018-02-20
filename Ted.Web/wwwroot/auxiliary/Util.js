@@ -11,6 +11,11 @@
 
     },
 
+    fireEvent(eventName, element) {
+
+        debugger;
+    },
+
 
     createCmpGuid() {
         return Util.createGuid('', true);

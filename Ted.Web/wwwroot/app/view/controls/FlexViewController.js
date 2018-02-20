@@ -2,10 +2,18 @@
     extend: 'Ext.app.ViewController',
     alias: 'controller.flexview',
 
+
+    control: {
+        'crudview > emptypage': {
+            emptyLinkClicked: function () {
+                this.addFieldButtonClick();
+            }
+        }
+    },
+
     getCrudView() {
         return this.getView().down('crudview');
     },
-
 
     addButtonClick() {
         debugger;
@@ -53,6 +61,8 @@
 
             this.modelName = `Ted.model.${this.getView().dataSourceName}`;
 
+            Ext.undefine(this.modelName);
+
             Ext.define(this.modelName, {
                 // TODO:
             });
@@ -84,13 +94,13 @@
         return this.store;
     },
 
-    addColumn() {
-
+    addFieldButtonClick() {
         var dialog = Ext.create({
             xtype: 'columndlg',
             viewModel: {
-                column: {
-                    name: 'New Column'
+                data: {
+                    name: 'New Column',
+                    dataType: 'text'
                 }
             },
 
@@ -98,9 +108,28 @@
         dialog.show();
         dialog.on('ok', (cmp, data) => {
 
+            if (dialog.down('formpanel').validate()) {
+                dialog.destroy();
+                this.insertColumn(data);
+            }
+        });
 
+    },
 
-        });        
+    insertColumn(colData) {
+debugger;
+        let view = this.getView();
 
+        colData.table = {
+            name = view.dataSourceName,
+            isPublic = view.isPublic
+        };
+
+        let url = `api/table/column/${App.getToken()}`;
+
+        AjaxUtil.post(url, colData, () => {
+            // insert in ui
+
+        });
     }
 });

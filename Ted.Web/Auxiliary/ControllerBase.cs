@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
@@ -7,16 +8,22 @@ using System.Reflection;
 namespace Ted
 {
     public class ControllerBase<T> : Controller
-        where T: BaseEntity
+        where T : BaseEntity
     {
         protected readonly TedContext _db;
 
         protected readonly AuthenticationHandler _auth;
 
-        public ControllerBase(TedContext db, AuthenticationHandler auth)
+        protected IConfiguration _config;
+
+        protected string _connStr;
+
+        public ControllerBase(TedContext db, AuthenticationHandler auth, IConfiguration config = null)
         {
+            _config = config;
             _db = db;
             _auth = auth;
+            _connStr = _config.GetConnectionString("DefaultConnection");
         }
 
         public new void Dispose()

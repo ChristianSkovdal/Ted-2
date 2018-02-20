@@ -19,6 +19,8 @@ namespace Ted
 
         public DbSet<Page> Pages { get; set; }
 
+        public DbSet<Table> Tables { get; set; }
+
         //public DbSet<Workspace> Workspaces { get; set; }
 
         //public DbSet<Page> Pages { get; set; }

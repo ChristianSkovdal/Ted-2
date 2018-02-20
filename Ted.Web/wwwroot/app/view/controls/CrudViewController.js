@@ -59,7 +59,7 @@
                 });
             }
         };
-        debugger;
+
         let dlgtype = view.getDialogType();
         if (dlgtype) {
             var dialog = Ext.create({

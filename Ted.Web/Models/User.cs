@@ -20,6 +20,8 @@ namespace Ted
         // Workspaces created by me
         public virtual ICollection<Workspace> myWorkspaces { get; set; } = new List<Workspace>();
 
+        public virtual ICollection<Table> myTables { get; set; } = new List<Table>();
+
         //// List of workspaces I use
         //public string workspaceList { get; set; }
 

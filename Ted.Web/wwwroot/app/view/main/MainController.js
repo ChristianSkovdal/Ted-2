@@ -233,8 +233,6 @@ Ext.define('Ted.view.main.MainController', {
                     ];
                 }
 
-                //item.xtype = item.xtype || 'container';
-                //item.requires = ['Ext.layout.VBox', 'Ext.layout.HBox'];
                 item.pageHash = page.getId();
                 item.pageRecord = page;
 

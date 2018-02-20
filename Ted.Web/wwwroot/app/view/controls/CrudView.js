@@ -5,6 +5,7 @@
     controller: 'crudview',
     layout: 'card',
 
+
     config: {
         nameContext: 'Items',
         alreadyExistErrorMsg: 'An item with the name {0} already exist',
@@ -14,9 +15,9 @@
         dialogType: null,
         selection: null,
         itemTpl: '<div class="dataview-item">' +
-        '<img draggable="false" src="{image}" />' +
-        '<div class="name">{name}</div>' +
-        '</div>'
+            '<img draggable="false" src="{image}" />' +
+            '<div class="name">{name}</div>' +
+            '</div>'
     },
 
     updateSelection(record) {
@@ -32,38 +33,32 @@
     //    this.getActiveItem().setStore(store);
     //},
 
-     updateItemTpl(tpl) {
+    updateItemTpl(tpl) {
         if (this.down('dataview'))
             this.down('dataview').setItemTpl(tpl);
     },
 
-     items: [
-         {
-             xtype: 'emptypage',
-             html: ` <div class=\'fa-outer-class\'>
-                         <!--<span class=\'x-fa fa-calendar\'></span>-->
-                     </div>
-                     <span class=\'blank-page-text\'>
-                         <a href="javascript:Util.invokeControllerMethod(\'flexview\', \'addColumn\');">
-                             Click here to add a field
-                         </a>
-                     </span>`
-         },                     
-         {
-             xtype: 'grid',
-             //columns: [
-             //    {
-             //        text: 'Name',
-             //        dataIndex: 'name'
-             //    }
-             //],
-         },
+    items: [
+        {
+            xtype: 'emptypage',
+            html:
+                `<div class=\'fa-outer-class\'>
+                    <span class=\'x-fa fa-calendar\'></span>
+                </div>
+                <span class=\'blank-page-text\'>
+                    <a id="clickLink" href="javascript:void(0);">
+                        Click here to add a field
+                    </a>
+                </span>`,
+        },
+        {
+            xtype: 'grid'
+        },
         {
             xtype: 'dataview',
             inline: true,
             ui: 'default',
             margin: 10,
-            //cls: 'dataview-item',
         }
     ],
 

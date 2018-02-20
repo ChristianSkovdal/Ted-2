@@ -6,6 +6,11 @@ namespace Ted
 {
     public class BaseEntity
     {
+        public BaseEntity()
+        {
+            createdTime = DateTime.Now;
+        }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int id { get; set; }

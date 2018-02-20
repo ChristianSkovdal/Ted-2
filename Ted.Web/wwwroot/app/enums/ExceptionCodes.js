@@ -14,5 +14,6 @@ UnableToParseArgument : 106,
 InvalidArgument : 107,
 WorkspaceNotFound : 103,
 Reauthenticate : 108,
+DataIntegrityError : 109,
 }
 );

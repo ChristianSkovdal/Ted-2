@@ -5059,34 +5059,35 @@ body {
 /* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:88 */
 .blank-page-container .blank-page-text {
     font-size: 1rem;
+    margin-top: 30px;
 }
-/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:94 */
+/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:95 */
 .dashboard-item {
     margin: 0 20px 20px 0;
     float: left;
     width: calc(100% - 20px);
 }
-/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:99 */
+/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:100 */
 .dashboard-item.last-in-row {
     margin-right: 0;
 }
-/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:106 */
+/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:107 */
 .small-100 {
     width: calc(100% - 20px);
 }
-/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:110 */
+/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:111 */
 .small-60 {
     width: calc(60% - 20px);
 }
-/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:114 */
+/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:115 */
 .small-50 {
     width: calc(50% - 20px);
 }
-/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:118 */
+/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:119 */
 .small-40 {
     width: calc(40% - 20px);
 }
-/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:122 */
+/* C:/dev/test/Ted2/Ted.Web/wwwroot/app/view/main/Main.scss:123 */
 .small-20 {
     width: calc(20% - 20px);
 }
