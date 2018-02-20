@@ -5,7 +5,7 @@
     controller: 'basedlg',
 
     width: 400,
-    center:true,
+    //center:true,
 	closable: true,
 	defaultFocus: 'textfield',
 

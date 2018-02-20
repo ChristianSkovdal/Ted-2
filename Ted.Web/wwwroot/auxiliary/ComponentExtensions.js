@@ -17,11 +17,11 @@
             return cmp;
         },
 
-        getRight() {
+        getRightPosition() {
             return this.el.getX() + this.el.getWidth();
         },
 
-        getBottom() {
+        getBottomPosition() {
             return this.el.getY() + this.el.getHeight();
         }
 
@@ -45,22 +45,5 @@
 
     });
 
-    /*
-        debugger;
-
-    if (!Ext.Button.hideText) {
-        Ext.Button.hideText = function(hide) {
-
-            if (hide) {
-                this.originalText = this.getText();
-                this.setText('');
-            }
-            else {
-                this.setText(this.originalText);
-            }
-        };
-    };
-
-*/
 
 });

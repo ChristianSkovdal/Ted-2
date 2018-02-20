@@ -24,8 +24,7 @@
         let firstPosX = items.first().el.getX();
         let idx=0;
         let current = last;
-
-        while (last.getRight() - firstPosX > width && idx >= 0) {
+        while (last.getRightPosition() - firstPosX > width && idx >= 0) {
             if (current instanceof (Ext.Button)) {
                 current.hideText(true);
             }
