@@ -233,6 +233,7 @@ Ext.define('Ted.view.main.MainController', {
                     ];
                 }
 
+                item.itemId = Util.createCmpGuid();
                 item.pageHash = page.getId();
                 item.pageRecord = page;
 

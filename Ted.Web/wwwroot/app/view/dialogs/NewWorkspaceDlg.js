@@ -20,7 +20,6 @@
     },
 
     getData() {
-        debugger;
         return this.getViewModel().get('ws');
     },
 

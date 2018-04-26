@@ -99,7 +99,7 @@
             xtype: 'columndlg',
             viewModel: {
                 data: {
-                    name: 'New Column',
+                    name: 'New Field',
                     dataType: 'text'
                 }
             },
@@ -117,19 +117,42 @@
     },
 
     insertColumn(colData) {
-debugger;
         let view = this.getView();
 
-        colData.table = {
-            name = view.dataSourceName,
-            isPublic = view.isPublic
+        let addColumn = (colData) => {
+
+            
+            
         };
 
-        let url = `api/table/column/${App.getToken()}`;
+        debugger;
+        // Should we create the data source?
+        if (view.getFields().length == 0) {
 
-        AjaxUtil.post(url, colData, () => {
-            // insert in ui
+            let uniqueTableName = `T${App.getUser().id}_${view.dataSourceName}`
+            let dataIndex = colData.name.replace(' ', '_');
 
-        });
+            let tableDef = {
+                name: uniqueTableName,
+                isPublic: view.isPublic,
+                column: {
+                    name: dataIndex,
+                    dataType: colData.type
+                }
+            };
+
+            let url = `api/table/${App.getToken()}`;
+            AjaxUtil.post(url, tableDef, () => {
+
+                // Add the column
+                addColumn(colData);
+
+            });
+
+        }
+        else {
+            addColumn(colData);
+        }
+
     }
 });

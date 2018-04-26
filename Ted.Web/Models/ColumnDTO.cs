@@ -8,6 +8,5 @@
 
         public string dataIndex { get; set; }
 
-        public Table Table { get; set; }
     }
 }

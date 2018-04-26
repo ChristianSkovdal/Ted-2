@@ -71,15 +71,15 @@
     },
 
     getFields() {
-        //return this.down('grid').getColumns()
-        //    .filter(r => r.getDataIndex() !== 'id')
-        //    .map(r => {
+        return this.down('grid').getColumns()
+           .filter(r => r.getDataIndex() !== 'id')
+           .map(r => {
 
-        //        return {
-        //            type: r.dataType || r._dataType,
-        //            name: r._dataIndex
-        //        };
-        //    });
+               return {
+                   type: r.dataType || r._dataType,
+                   name: r._dataIndex
+               };
+           });
 
     },
 

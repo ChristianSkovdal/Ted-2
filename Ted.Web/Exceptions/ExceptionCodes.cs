@@ -15,5 +15,6 @@
         WorkspaceNotFound = 103,
         Reauthenticate = 108,
         DataIntegrityError = 109,
+        TableExist = 110,
     }
 }

@@ -8,6 +8,10 @@
     shadow: true,
     margin: 20,
     layout: 'fit',
+
+    getFields() {
+        return this.downsafe('crudview').getFields();
+    },
     
     items: [
         {

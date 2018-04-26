@@ -1,4 +1,6 @@
-﻿namespace Ted
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Ted
 {
     public class Table : BaseEntity
     {
@@ -7,5 +9,8 @@
         public int UserId { get; set; }
 
         public bool isPublic { get; set; }
+
+        [NotMapped]
+        public ColumnDTO column { get; set; }
     }
 }
